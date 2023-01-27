@@ -61,3 +61,35 @@ dicc.pop(eliminar)
 
 print(dicc)
 
+# Tarea 04
+# Vamos a solicitar al usuario 8 números enteros del 0 al 9. Se supone que son los números de su
+# DNI, que guardaremos cada uno en una entrada de una lista. A continuación, con esos números calcularemos
+# la letra correspondiente y la guardaremos en una variable. Finalmente, crearemos un diccionario con
+# dos claves, cada una guardará, respectivamente, los números y la letra del DNI. Finalmente, mostraremos
+# el diccionario resultante.
+print('/// Vamos a solicitarte tu número de DNI sin la letra ///')
+
+n_dni = []
+cont = 1
+
+for n in range(8):
+    n_dni.append(str(input(f'Escribe el número en posición {cont} de tu DNI: ')))
+    cont += 1
+
+dicc_letra = {0: 'T', 1: 'R', 2: 'W', 3: 'A', 4: 'G', 5: 'M', 6: 'Y', 7: 'F', 8: 'P', 9: 'D', 10: 'X',
+              11: 'B', 12: 'N', 13: 'J', 14: 'Z', 15: 'S', 16: 'Q', 17: 'V', 18: 'H', 19: 'L', 20: 'C',
+              21: 'K', 22: 'E'}
+
+numero = ''
+
+for n in n_dni:
+    numero += str(n)
+
+calculo = int(numero) % 23
+
+letra = dicc_letra[calculo]
+
+DNI = {'Número': numero, 'Letra': letra}
+
+print(DNI)
+
