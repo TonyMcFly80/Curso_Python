@@ -129,3 +129,53 @@ for n in range(1, number):
     dicc.setdefault(n, n**3)
 
 print(dicc)
+
+# Ejercicio 2
+# Escribe un programa que pregunte al usuario su nombre, edad y teléfono y lo guarde en un diccionario.
+# Después, debe mostrar por pantalla el mensaje ‘{nombre} tiene {edad} años y su número de teléfono es
+# {teléfono}.
+
+print('/// Vamos a preguntarte algunos datos ///')
+
+dicc = {}
+
+nombre = dicc.setdefault('Nombre', str(input('Cual es tu nombre?: ')))
+edad = dicc.setdefault('Edad', str(input('Cual es tu edad?: ')))
+telefono = dicc.setdefault('Teléfono', int(input('Cual es tu número de teléfono?: ')))
+
+print(f'{nombre} tiene {edad} años y su número de teléfono es {telefono}')
+print(dicc)
+
+# Ejercicio 3
+# Escribe un programa que cree un diccionario simulando una cesta de la compra. El programa debe preguntar
+# el artículo y su precio por unidad. El artículo será la clave y el valor el precio, hasta que el usuario decida
+# terminar. Después se debe mostrar por pantalla la lista de la compra y el coste total, con el siguiente formato
+# Artículo 1    Precio
+# Artículo 2    Precio
+# Artículo 3    Precio
+# . . .         . . .
+# Total         Precio Total
+
+
+print('/// Vamos a calcular el coste de tu cesta de la compra ///')
+
+cesta = {}
+total = 0
+ok = 1
+
+while ok != 0:
+    articulo = str(input('Escribe el nombre del artículo: '))
+    precio = float(input('Marca el precio del artículo: '))
+    cesta.setdefault(articulo, precio)
+    ok = int(input('Desea finalizar? (1=NO , 0=SI): '))
+
+print('\n/// LISTA DE LA COMPRA ///\n')
+
+for i in cesta:
+    print(f'{i}\t\t\t\t\t{cesta[i]}')
+
+for j in cesta:
+    total += cesta[j]
+
+print(f' * * * \t\t\t\t\t * * * ')
+print(f'Total\t\t\t\t\t{total}')
