@@ -179,3 +179,31 @@ for j in cesta:
 
 print(f' * * * \t\t\t\t\t * * * ')
 print(f'Total\t\t\t\t\t{total}')
+
+# Ejercicio 4
+# Crea un programa que lea números enteros hasta que introduzca el 0 y devuelva un diccionario con la
+# cantidad números positivos y negativos introducidos.
+
+print('\n/// Vamos a crear un diccionario con números enteros positivos y negativos ///\n')
+
+numbers = {}
+positivos = []
+negativos = []
+
+ok = 1
+
+while ok != 0:
+    numero = int(input('Escribe un número entero: '))
+
+    if numero > 0:
+        positivos.append(numero)
+        ok = int(input('Desea finalizar? (1=NO , 0=SI): '))
+
+    else:
+        negativos.append(numero)
+        ok = int(input('Desea finalizar? (1=NO , 0=SI): '))
+
+numbers.setdefault('Positivos', positivos)
+numbers.setdefault('Negativos', negativos)
+
+print(f'\n{numbers}')
