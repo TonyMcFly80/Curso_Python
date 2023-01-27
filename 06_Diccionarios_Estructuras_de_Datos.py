@@ -93,3 +93,21 @@ DNI = {'Número': numero, 'Letra': letra}
 
 print(DNI)
 
+# Tarea 05
+# Vamos a leer un string por teclado y vamos a devolver un diccionario con la cantidad de apariciones
+# de cada caracter en el string proporcionado por el usuario.
+
+intro = str(input('Escribe una palabra o una frase: '))
+letras = intro.lower()
+
+dicc = {}
+
+for l in letras:
+
+    if l == ' ':
+        continue
+
+    else:
+        dicc.setdefault(l, letras.count(l))
+
+print(dicc)
