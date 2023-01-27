@@ -24,7 +24,11 @@ print(datos_cliente)
 # va a ser quien introduzca esas notas por teclado. Finalmente, para cada clave, mostraremos la media
 # de las 3 notas.
 
-asignaturas = {'Math': [], 'English': [], 'History': [], 'Science': [], 'IT': []}
+asignaturas = {'Math': [], 
+               'English': [], 
+               'History': [], 
+               'Science': [], 
+               'IT': []}
 
 for key in asignaturas:
     asignaturas[key].append(float(input(f'Introduce la primera nota para {key}: ')))
