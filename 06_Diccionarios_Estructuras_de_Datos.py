@@ -41,3 +41,23 @@ for key in asignaturas:
     nota = sum(asignaturas[key]) / 3
     print(f'Tu nota de {key} es: {nota}')
     
+# Tarea 03
+# Dado un diccionario, vamos a solicitar al usuario una clave que quiera eliminar y vamos a eliminarla.
+# Al final, le mostraremos el dicc actualizado.
+
+dicc = {'Nombre': 'Juan',
+        'Apellido': 'Sanchez',
+        'Edad': 38,
+        'Profesión': 'Pintor',
+        }
+print('/// Estas son las claves de este diccionario ///')
+
+for key in dicc:
+    print(key)
+
+eliminar = str(input('Cual deseas eliminar?: '))
+
+dicc.pop(eliminar)
+
+print(dicc)
+
