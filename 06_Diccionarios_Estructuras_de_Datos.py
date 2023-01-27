@@ -111,3 +111,21 @@ for l in letras:
         dicc.setdefault(l, letras.count(l))
 
 print(dicc)
+
+
+# EXAMEN DEL TEMA
+
+# Ejercicio 1
+# Crea un programa que pida un número entero positivo por teclado y que cree un diccionario cuyas claves
+# sean desde el número 1 hasta el número indicado. Los valores de cada clave serán las propias claves elevadas
+# al cubo.
+
+print('/// Vamos a crear un diccionario de números que iran desde el 0 hasta el número que quieras ///')
+
+number = int(input('Escribe el número entero positivo que quieras: '))
+dicc = {}
+
+for n in range(1, number):
+    dicc.setdefault(n, n**3)
+
+print(dicc)
