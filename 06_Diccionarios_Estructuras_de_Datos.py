@@ -207,3 +207,31 @@ numbers.setdefault('Positivos', positivos)
 numbers.setdefault('Negativos', negativos)
 
 print(f'\n{numbers}')
+
+# Ejercicio 5
+# Crea un programa que lea números enteros hasta que introduzca el 0 y devuelva un diccionario con la
+# cantidad números pares e impares introducidos.
+
+print('\n/// Vamos a crear un diccionario con números enteros pares e impares ///\n')
+
+numbers = {}
+pares = []
+impares = []
+
+ok = 1
+
+while ok != 0:
+    numero = int(input('Escribe un número entero: '))
+
+    if numero % 2 == 0:
+        pares.append(numero)
+        ok = int(input('Desea finalizar? (1=NO , 0=SI): '))
+
+    else:
+        impares.append(numero)
+        ok = int(input('Desea finalizar? (1=NO , 0=SI): '))
+
+numbers.setdefault('Pares', pares)
+numbers.setdefault('Impares', impares)
+
+print(f'\n{numbers}')
