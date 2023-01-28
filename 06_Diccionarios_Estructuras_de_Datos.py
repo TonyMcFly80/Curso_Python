@@ -325,7 +325,6 @@ print(dicc)
 # Dada una matriz, crea un diccionario que guarde el número de filas, el de columnas y cada fila en una entrada
 # de un diccionario.
 
-
 A = ([1, 0, -3, -2, 1], [2, 0, 1, 1, 2], [2, 0, 1, 0, -1], [-1, 2, 0, 1, 0])
 count = 0
 dicc = {}
