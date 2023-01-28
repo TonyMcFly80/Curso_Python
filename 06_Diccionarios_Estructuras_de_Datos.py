@@ -235,3 +235,43 @@ numbers.setdefault('Pares', pares)
 numbers.setdefault('Impares', impares)
 
 print(f'\n{numbers}')
+
+# Ejercicio 6
+# Crea un programa que permita al usuario introducir los nombres de los alumnos de una clase y las notas que
+# han obtenido. Cada alumno puede tener distinta cantidad de notas. Guarda la información en un diccionario
+# cuyas claves serán los nombres de los alumnos y los valores serán listas con las notas de cada alumno.
+# El programa va a pedir el nombre de un estudiante e irá pidiendo sus notas (del 1 al 10) hasta que introduzcamos
+# un 0. Al final, cuando el nombre que introduzcamos sea un string vacío, el programa nos mostrará la
+# lista de alumnos y la nota media obtenida por cada uno de ellos.
+# PISTA: Vas a necesitar la función sum().
+
+print('/// Vamos a evaluar a los Alumnos ///')
+
+evaluaciones = {}
+
+
+while True:
+    notas = []
+    nombre = str(input('\nEscribe el nombre del alumno: '))
+
+    if nombre != '':
+        evaluaciones.setdefault(nombre, notas)
+        ok = 1
+
+    else:
+        print('/// Fin de la introducción de datos ///')
+        print(f'\n{evaluaciones}')
+        break
+
+    while ok != 0:
+        nota = float(input(f'Escribe una nota para {nombre}: '))
+        notas.append(nota)
+        ok = int(input('Desea finalizar? (1=NO , 0=SI): '))
+
+print('\n\nLas Evaluciones por alumno son:\n')
+
+for key in evaluaciones:
+    suma = sum(evaluaciones[key])
+    tam = len(evaluaciones[key])
+    media = float(suma) / float(tam)
+    print(f'La nota de {key} es {media}')
