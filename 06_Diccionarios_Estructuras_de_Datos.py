@@ -290,3 +290,17 @@ for n in range(1, number + 1):
     dicc.setdefault(n, ('*' * n))
 
 print(dicc)
+
+# Ejercicio 8
+# Crea un programa que pida el número de palabras a introducir. Crear un diccionario de clave la palabra y
+# de valor la longitud de dicha palabra.
+
+dicc = {}
+
+n = int(input('Cuantas palabras quieres introducir?: '))
+
+for i in range(n):
+    palabra = str(input(f'Escribe la palabra {i + 1}: '))
+    dicc.setdefault(palabra, len(palabra))
+
+print(dicc)
