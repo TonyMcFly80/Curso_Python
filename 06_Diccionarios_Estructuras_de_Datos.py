@@ -304,3 +304,19 @@ for i in range(n):
     dicc.setdefault(palabra, len(palabra))
 
 print(dicc)
+
+# Ejercicio 9
+# Crea un programa que pida el número de palabras a introducir. Crear un diccionario de clave la palabra y
+# de valor el número de vocales de la palabra.
+
+dicc = {}
+
+n = int(input('Cuantas palabras quieres introducir?: '))
+
+for i in range(n):
+    palabra = str(input(f'Escribe la palabra {i + 1}: '))
+    p = palabra.lower()
+    count = p.count('a') + p.count('e') + p.count('i') + p.count('o') + p.count('u')
+    dicc.setdefault(palabra, count)
+
+print(dicc)
