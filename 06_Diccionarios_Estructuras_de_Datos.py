@@ -120,7 +120,7 @@ print(dicc)
 # sean desde el número 1 hasta el número indicado. Los valores de cada clave serán las propias claves elevadas
 # al cubo.
 
-print('/// Vamos a crear un diccionario de números que iran desde el 0 hasta el número que quieras ///')
+print('/// Vamos a crear un diccionario de números que irán desde el 0 hasta el número que quieras ///')
 
 number = int(input('Escribe el número entero positivo que quieras: '))
 dicc = {}
@@ -281,7 +281,7 @@ for key in evaluaciones:
 # sean desde el número 1 hasta el número indicado. Los valores de cada clave serán tantos símbolos "*" como
 # indique la clave.
 
-print('/// Vamos a crear un diccionario de números que iran desde el 1 hasta el número que quieras ///')
+print('/// Vamos a crear un diccionario de números que irán desde el 1 hasta el número que quieras ///')
 
 number = int(input('Escribe el número entero positivo que quieras: '))
 dicc = {}
