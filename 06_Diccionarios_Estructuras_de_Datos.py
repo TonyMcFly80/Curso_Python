@@ -320,3 +320,23 @@ for i in range(n):
     dicc.setdefault(palabra, count)
 
 print(dicc)
+
+# Ejercicio 10
+# Dada una matriz, crea un diccionario que guarde el número de filas, el de columnas y cada fila en una entrada
+# de un diccionario.
+
+
+A = ([1, 0, -3, -2, 1], [2, 0, 1, 1, 2], [2, 0, 1, 0, -1], [-1, 2, 0, 1, 0])
+count = 0
+dicc = {}
+
+for i in A:
+    count += 1
+    dicc.setdefault(f'Fila {count}', i)
+
+    for j in A:
+        dicc.setdefault('Número de Columnas', len(j))
+
+dicc.setdefault('Número de Filas', count)
+
+print(dicc)
