@@ -190,3 +190,33 @@ if set1 == set():
 
 else:
     print(set1)
+
+# Ejercicio 04
+# Dado un conjunto, crea un programa que nos devuelva el caracter con mayor valor ASCII. Debes hacerlo sin
+# recurrir a la función max().
+
+set1 = {'A', 'X', 'F', 'J', 'H', 'M', 'Z'}
+
+dicc1 = {'T': 0, 'R': 1, 'W': 2, 'A': 3, 'G': 4, 'M': 5, 'Y': 6, 'F': 7, 'P': 8, 'D': 9, 'X': 10,
+        'B': 11, 'N': 12, 'J': 13, 'Z': 14, 'S': 15, 'Q': 16, 'V': 17, 'H': 18, 'L': 19, 'C': 20,
+        'K': 21, 'E': 23
+         }
+
+dicc2 = {0: 'T', 1: 'R', 2: 'W', 3: 'A', 4: 'G', 5: 'M', 6: 'Y', 7: 'F', 8: 'P', 9: 'D', 10: 'X',
+         11: 'B', 12: 'N', 13: 'J', 14: 'Z', 15: 'S', 16: 'Q', 17: 'V', 18: 'H', 19: 'L', 20: 'C',
+         21: 'K', 22: 'E'
+         }
+
+ok = -100
+
+for n in set1:
+    n1 = dicc1[n]
+
+    if n1 > ok:
+        ok = n1
+
+    else:
+        continue
+
+print(f'La letra mayor de {set1} es {dicc2[ok]}')
+    
