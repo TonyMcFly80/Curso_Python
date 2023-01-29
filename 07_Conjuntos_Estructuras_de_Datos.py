@@ -352,3 +352,24 @@ if set1 == set():
 
 else:
     print(set1)
+
+# Ejercicio 10
+# Dada una frase introducida por teclado, guarda en un conjunto todas las palabras palíndromas.
+
+frase = str(input('Escribe una frase: '))
+
+f = frase.lower()
+
+set1 = set()
+
+lista_palabras = f.split(' ')
+
+for palabra in lista_palabras:
+
+    if palabra == palabra[::-1]:
+        set1.add(palabra)
+
+    else:
+        continue
+
+print(set1)    
