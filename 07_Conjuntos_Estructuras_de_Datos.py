@@ -248,3 +248,37 @@ for n in set1:
         continue
 
 print(f'La letra menor de {set1} es {dicc2[ok]}')
+
+# Ejercicio 06
+# Dada una frase introducida por teclado, guarda en un conjunto todas las palabras que contengan la letra
+# indicada por el usuario.
+
+print('/// Escribe una frase y luego una letra, y te diremos que palabras contienen esa letra ///')
+
+frase = str(input('Escribe una frase: '))
+letra = str(input('Escribe una letra: '))
+
+f = frase.lower()
+l = letra.lower()
+
+set1 = set()
+
+lista_palabras = f.split(' ')
+
+for palabra in lista_palabras:
+
+    if l in palabra:
+        set1.add(palabra)
+
+    else:
+        continue
+
+
+print(f'\nEn la frase \"{frase}\"')
+print(f'Las palabras que contienen la letra \"{letra}\" son:\n')
+
+if set1 == set():
+    print('Nínguna')
+
+else:
+    print(set1)
