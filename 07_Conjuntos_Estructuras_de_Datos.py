@@ -158,3 +158,35 @@ for n in set1:
         continue
 
 print(f'El número menor de {set1} es {ok}')
+
+# Ejercicio 03
+# Dada una frase introducida por teclado, guarda en un conjunto todas las palabras que empiecen por la letra
+# indicada por el usuario.
+print('/// Escribe una frase y luego una letra, y te diremos que palabras empiezan por esa letra ///')
+
+frase = str(input('Escribe una frase: '))
+letra = str(input('Escribe una letra: '))
+
+f = frase.lower()
+l = letra.lower()
+
+set1 = set()
+
+lista_palabras = f.split(' ')
+
+for palabra in lista_palabras:
+
+    if palabra[0] == l:
+        set1.add(palabra)
+
+    else:
+        continue
+
+print(f'\nEn la frase {frase}')
+print(f'Las palabras que comienzan con la letra {letra} son:\n')
+
+if set1 == set():
+    print('Nínguna')
+
+else:
+    print(set1)
