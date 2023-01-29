@@ -301,3 +301,21 @@ for letra in ini:
         continue
 
 print(set1)
+
+# Ejercicio 08
+# Dada una frase introducida por teclado, guarda en un conjunto todas las palabras con longitud par.
+
+frase = str(input('Escribe una frase: '))
+f = frase.lower()
+set1 = set()
+lista_palabras = f.split(' ')
+
+for palabra in lista_palabras:
+
+    if len(palabra) % 2 == 0 and palabra.isalpha() is True:
+        set1.add(palabra)
+
+    else:
+        continue
+
+print(set1)
