@@ -282,3 +282,22 @@ if set1 == set():
 
 else:
     print(set1)
+
+# Ejercicio 07
+# Dada una frase introducida por teclado, guarda en un conjunto la primera letra de cada palabra sin hacer
+# uso del método .split().
+
+frase = str(input('Escribe una frase: '))
+set1 = set()
+
+ini = frase.title()
+
+for letra in ini:
+
+    if letra == letra.upper() and letra.isalpha() is True:
+        set1.add(letra)
+
+    else:
+        continue
+
+print(set1)
