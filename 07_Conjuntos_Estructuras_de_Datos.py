@@ -182,8 +182,8 @@ for palabra in lista_palabras:
     else:
         continue
 
-print(f'\nEn la frase {frase}')
-print(f'Las palabras que comienzan con la letra {letra} son:\n')
+print(f'\nEn la frase \"{frase}\"')
+print(f'Las palabras que comienzan con la letra \"{letra}\" son:\n')
 
 if set1 == set():
     print('Nínguna')
