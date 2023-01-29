@@ -82,3 +82,24 @@ else:
     set3 = set1.symmetric_difference(set2)
 
     print(set3)
+
+# Tarea 04
+# Vamos a guardar en un conjunto los números primos comprendidos entre 2 y el número n que nos
+# indique el usuario mediante la criba de Eratóstenes.
+
+n = int(input('Escribe un número entero mayor que 2: '))
+primos = set(range(2, n + 1))       # Rango completo de números introducidos
+numeros = list(range(2, n + 1))     # Lista igual que primos para poder trabajar
+multiplos = [True for x in range(len(numeros))]     #Lista Booleana con todo en True
+
+for i in range(len(numeros)):   # Índice de toda la lista
+    if multiplos[i] == False:   # Si el número que está trabajando es False, continuamos.
+        continue
+
+    for j in range(i + 1, len(numeros)):    # Consideramos el siguiente número True
+        if numeros[j] % numeros[i] == 0:    # Comprobamos si j es multiplo de i
+            multiplos[j] = False            # Si es multiplo lo tachamos
+            primos.discard(numeros[j])      # Y lo eliminamos del conjunto
+
+print(primos)
+    
