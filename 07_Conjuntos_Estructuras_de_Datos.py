@@ -103,3 +103,19 @@ for i in range(len(numeros)):   # Índice de toda la lista
 
 print(primos)
     
+# Tarea 05
+# Vamos a crear un programa que nos devuelva el elemento máximo de un conjunto sin utilizar
+# la función max().
+
+set1 = {2, 13, -7, 14, 5, 0, -1, 3, 9}
+ok = -100
+
+for n in set1:
+
+    if n > ok:
+        ok = n
+
+    else:
+        continue
+
+print(f'El número mayor de {set1} es {ok}')
