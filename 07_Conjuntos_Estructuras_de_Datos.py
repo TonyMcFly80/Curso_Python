@@ -119,3 +119,25 @@ for n in set1:
         continue
 
 print(f'El número mayor de {set1} es {ok}')
+
+
+# EXAMEN DEL TEMA
+
+# Ejercicio 01
+# Dado un número entero introducido por teclado, guarda sus divisores en un conjunto y muéstralo.
+
+print('/// Vamos a calcular todos los divisores de un número ///')
+
+n = int(input('Qué numero vamos a dividir?: '))
+set1 = set()
+
+for i in range(1, n + 1):
+
+    if n % i == 0:
+        set1.add(i)
+
+    else:
+        continue
+
+print('Estos son los divisores:')
+print(set1)
