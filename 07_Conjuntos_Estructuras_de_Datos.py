@@ -141,3 +141,20 @@ for i in range(1, n + 1):
 
 print('Estos son los divisores:')
 print(set1)
+
+# Ejercicio 02
+# Crea un programa que dado un conjunto, nos devuelva su mínimo. Debes hacerlo sin recurrir a la función
+# min().
+
+set1 = {2, 13, -7, 14, 5, 0, -1, 3, 9}
+ok = 100
+
+for n in set1:
+
+    if n < ok:
+        ok = n
+
+    else:
+        continue
+
+print(f'El número menor de {set1} es {ok}')
