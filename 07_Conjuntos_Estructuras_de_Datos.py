@@ -319,3 +319,36 @@ for palabra in lista_palabras:
         continue
 
 print(set1)
+
+# Ejercicio 09
+# Dada una frase introducida por teclado, guarda en un conjunto todas las palabras que acaben por la letra
+# indicada por el usuario.
+
+print('/// Escribe una frase y luego una letra, y te diremos que palabras terminan por esa letra ///')
+
+frase = str(input('Escribe una frase: '))
+letra = str(input('Escribe una letra: '))
+
+f = frase.lower()
+l = letra.lower()
+
+set1 = set()
+
+lista_palabras = f.split(' ')
+
+for palabra in lista_palabras:
+
+    if palabra[-1] == l:
+        set1.add(palabra)
+
+    else:
+        continue
+
+print(f'\nEn la frase \"{frase}\"')
+print(f'Las palabras que terminan con la letra \"{letra}\" son:\n')
+
+if set1 == set():
+    print('Nínguna')
+
+else:
+    print(set1)
