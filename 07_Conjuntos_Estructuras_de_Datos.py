@@ -52,3 +52,29 @@ for l in p2:    # Creamos conjunto de la segunda palabra.
 set3 = set1.intersection(set2)
 
 print(set3)
+
+# Tarea 03
+# Vamos a pedirle 4 números enteros al usuario. Se corresponderán con los extremos de los intervalos
+# [a,b] y [c,d]. Vamos a generar dos conjuntos que guarden, respectivamente, los enteros contenidos en
+# cada uno de los intervalos (incluyendo los extremos) y, finalmente, calcularemos la diferencia
+# simétrica.
+
+print('Vamos a pedirte 4 numeros que crearán 2 intervalos de números... de A a B, y de C a D...')
+
+A = int(input('Escribe número para A: '))
+B = int(input('Escribe número para B: '))
+C = int(input('Escribe número para C: '))
+D = int(input('Escribe número para D: '))
+
+set1 = set()
+set2 = set()
+
+for n in range(A, B + 1):
+    set1.add(n)
+
+for n in range(C, D + 1):
+    set2.add(n)
+
+set3 = set1.symmetric_difference(set2)
+
+print(set3)
