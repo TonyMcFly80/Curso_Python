@@ -69,12 +69,16 @@ D = int(input('Escribe número para D: '))
 set1 = set()
 set2 = set()
 
-for n in range(A, B + 1):
-    set1.add(n)
+if B < A or D < C:
+    print('Los intervalos no son correctos.')
 
-for n in range(C, D + 1):
-    set2.add(n)
+else:
+    for n in range(A, B + 1):
+        set1.add(n)
 
-set3 = set1.symmetric_difference(set2)
+    for n in range(C, D + 1):
+        set2.add(n)
 
-print(set3)
+    set3 = set1.symmetric_difference(set2)
+
+    print(set3)
