@@ -180,3 +180,39 @@ lista.append(t5)
 
 print('\nLas notas medias de las asignaturas son:\n')
 print(lista)
+
+# Tarea 05
+# Vamos a pedirle al usuario el número de puntos de un plano que quiere introducir. Para cada punto,
+# vamos a solicitarle las coordenadas x e y. Guardaremos las coordenadas (x, y) en tuplas de tamaño 3,
+# donde la última entrada se corresponde con el cuadrante al que pertenece dicho punto. Todas las tuplas
+# de tamaño 3 serán guardadas en una lista. Finalmente, mostraremos todas las tuplas de tamaño 3 creadas,
+# con el formato "El punto ({x}, {y}) pertenece al cuadrante {cuadrante}"
+
+n = int(input("¿Cuántos puntos vas a introducir? "))
+puntos = []
+
+for i in range(n):
+    x = float(input("Indica la coordenada x = "))
+    y = float(input("Indica la coordenada y = "))
+
+    if x >= 0 and y >= 0:
+        cuadrante = "I"
+
+    elif x <= 0 and y >= 0:
+        cuadrante = "II"
+
+    elif x <= 0 and y <= 0:
+        cuadrante = "III"
+
+    elif x >= 0 and y <= 0:
+        cuadrante = "IV"
+
+    elif x == 0 and y == 0:
+        cuadrante = "center"
+
+    puntos.append((x, y, cuadrante))
+
+for punto in puntos:
+    x, y, cuadrante = punto
+    print(f"El punto ({x}, {y}) pertenece al cuadrante {cuadrante}")
+    
