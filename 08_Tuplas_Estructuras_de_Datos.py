@@ -110,3 +110,73 @@ t3 = ('Espacios en la frase', count_e)
 lista.append(t3)
 
 print(lista)
+
+# Tarea 04
+# Vamos a pedirle al usuario una asignatura ('Mates', 'Lengua', 'Historia', 'Informática' o 'Música')
+# y la nota en dicha asignatura hasta que introduzca una asignatura diferente a las indicadas.
+# El usuario puede repetir una asignatura tantas veces como quiera. La nota tendrá que ser del 1 al 10.
+# Guardaremos la información (asignatura, nota) en una tupla. Las tuplas serán guardadas en una lista.
+# Finalmente, para cada asignatura, vamos a mostrar la nota media.
+
+lista = []
+
+c_mat = 0
+c_len = 0
+c_his = 0
+c_inf = 0
+c_mus = 0
+
+mat = 0
+len = 0
+his = 0
+inf = 0
+mus = 0
+
+while True:
+    asignatura = int(input('Elige entre 1.Mates, 2.Lengua, 3.Historia, 4.Informatica o 5.Musica (0 para Finalizar): '))
+
+    if asignatura == 1:
+        nota = float(input('Escribe la nota de Mates: '))
+        mat = mat + nota
+        c_mat += 1
+
+    elif asignatura == 2:
+        nota = float(input('Escribe la nota de Lengua: '))
+        len = len + nota
+        c_len += 1
+
+    elif asignatura == 3:
+        nota = float(input('Escribe la nota de Historia: '))
+        his = his + nota
+        c_his += 1
+
+    elif asignatura == 4:
+        nota = float(input('Escribe la nota de Informática: '))
+        inf = inf + nota
+        c_inf += 1
+
+    elif asignatura == 5:
+        nota = float(input('Escribe la nota de Música: '))
+        mus = mus + nota
+        c_mus += 1
+
+    else:
+        break
+
+t1 = ('Mates', mat / c_mat)
+lista.append(t1)
+
+t2 = ('Lengua', len / c_len)
+lista.append(t2)
+
+t3 = ('Historia', his / c_his)
+lista.append(t3)
+
+t4 = ('Informática', inf / c_inf)
+lista.append(t4)
+
+t5 = ('Música', mus / c_mus)
+lista.append(t5)
+
+print('\nLas notas medias de las asignaturas son:\n')
+print(lista)
