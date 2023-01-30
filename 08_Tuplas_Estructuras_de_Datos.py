@@ -68,3 +68,45 @@ while True:
     else:
         print('Número incorrecto')
 
+# Tarea 03
+# Dada una frase introducida por el usuario, vamos a crear una lista con 3 tuplas y 2 entradas.
+# La primera tupla tendrá el número de vocales; la segunda, el número de consonantes; y la última,
+# el número de espacios en blanco. Para cada tupla, la primera entrada será un string explicativo
+# y, la segunda, el valor correspondiente.
+
+frase = str(input('Escribe una frase: '))
+frase = frase.lower()
+lista = []
+
+vocales = 'aeiou'
+consonantes = 'bcdfghijklmnñpqrstvwxyz'
+espacio = ' '
+
+count_v = 0
+count_c = 0
+count_e = 0
+
+for letra in frase:
+
+    if letra in vocales:
+        count_v += 1
+
+    elif letra in consonantes:
+        count_c += 1
+
+    elif letra in espacio:
+        count_e += 1
+
+    else:
+        continue
+
+t1 = ('Vocales en la frase', count_v)
+lista.append(t1)
+
+t2 = ('Consonantes en la frase', count_c)
+lista.append(t2)
+
+t3 = ('Espacios en la frase', count_e)
+lista.append(t3)
+
+print(lista)
