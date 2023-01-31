@@ -361,3 +361,21 @@ lista.append(caracteres)
 tupa = tuple(lista)
 
 print(tupa)
+
+# Ejercicio 07
+# Crea una lista de 20 tuplas de tamaño 2. La primera entrada será un número entero entre 1 y 20 y la segunda
+# entrada contendrá una lista con los 10 primeros múltiplos del número entero correspondiente. Por último,
+# muestra las tablas de multiplicar del 1 al 20 con el formato “1 x 1 = 1”.
+
+lista = []
+
+numero = int(input('Escribe un número entero entre 1 y 20: '))
+
+if numero in range(1, 21):
+
+    for n in range(1, 21):
+        t = numero, n
+        lista.append(t)
+        print(f'{numero} x {n} = {numero * n}')
+else:
+    print('Número incorrecto')
