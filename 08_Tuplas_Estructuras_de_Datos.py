@@ -379,3 +379,27 @@ if numero in range(1, 21):
         print(f'{numero} x {n} = {numero * n}')
 else:
     print('Número incorrecto')
+
+# Ejercicio 08
+# Pide al usuario dos números enteros por teclado. Asegúrate de que el primero es mayor o igual al segundo.
+# Realiza la división entera y guarda en una tupla el dividendo, el divisor, el cociente y el resto de la divisón
+# entera realizada y muéstrale al usuario el resultado por pantalla.
+
+A = int(input('Escribe un número entero: '))
+B = int(input('Escribe otro número entero pero menor al anterior: '))
+
+lista = []
+
+if A > B:
+    coc = A // B
+    res = A % B
+    t = A, B, coc, res
+    lista.append(t)
+
+else:
+    print('Datos incorrectos')
+
+tupla = tuple(lista)
+
+print(tupla)
+print(f'Al dividir un dividendo {A} entre un divisor {B}, el cociente es {coc} con un resto de {res}')    
