@@ -216,3 +216,19 @@ for punto in puntos:
     x, y, cuadrante = punto
     print(f"El punto ({x}, {y}) pertenece al cuadrante {cuadrante}")
     
+# Tarea 06
+# Dada una lista de palabras, vamos a crear otra lista del mismo tamaño que guarde la primera
+# letra de cada palabra en la posición correspondiente. Por último, con la función zip() crearemos
+# una tupla de tuplas con la palabra en la primera entrada y la letra con la que empieza, en la segunda.
+
+palabras = ['frodo', 'sam', 'pippin', 'merry']
+iniciales = []
+
+for xp in palabras:
+    iniciales.append(xp[0])
+
+anillo = zip(palabras, iniciales)
+
+tupla = tuple(anillo)
+
+print(tupla)
