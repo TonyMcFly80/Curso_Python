@@ -273,3 +273,24 @@ for key, value in dicc.items():
 
     else:
         continue
+
+# Ejercicio 03
+# Dada una frase proporcionada por el usuario, crea una lista de tuplas indicando palabra, longitud de cada
+# palabra, letra inicial y posición que ocupan dentro de la frase.
+
+frase = str(input('Escribe una frase: '))
+frase = frase.lower()
+
+final = frase.split(' ')
+
+lista = []
+
+indice = 1
+
+for palabra in final:
+    t = palabra, len(palabra), palabra[0], indice
+    indice += 1
+    lista.append(t)
+
+print(lista)
+
