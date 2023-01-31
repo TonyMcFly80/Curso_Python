@@ -332,3 +332,32 @@ anillo = zip(palabras, longitud)
 dicc = dict(anillo)
 
 print(dicc)
+
+# Ejercicio 06
+# Haz que el usuario introduzca palabras hasta que introduzca una palabra vacía. Guarda todas las palabras
+# en una tupla y muestra la tupla y el número total de caracteres que ha introducido.
+# PISTA: Para guardar los elementos de uno en uno vas a tener que utilizar un tipo de dato que no es tupla
+# y luego transformarlo a tupla.
+
+lista = []
+
+while True:
+
+    palabra = str(input('Escribe una palabra (Enter para finalizar): '))
+
+    if palabra != '':
+        lista.append(palabra.lower())
+
+    else:
+        break
+
+caracteres = 0
+
+for palabra in lista:
+    caracteres = len(palabra) + caracteres
+
+lista.append(caracteres)
+
+tupa = tuple(lista)
+
+print(tupa)
