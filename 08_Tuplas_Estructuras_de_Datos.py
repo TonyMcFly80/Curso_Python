@@ -420,3 +420,19 @@ if numero in range(0, 361):
 
 else:
     print('Datos incorrectos')
+
+# Ejercicio 10
+# Pide al usuario números complejos. Para cada número, crea una tupla donde la primera entrada sea dicho
+# número complejo, la segunda, su opuesto y, la tercera, su conjugado.
+
+print('/// Vamos a Jugar con números complejos ///')
+
+real = int(input('Introduce el número entero de la parte real: '))
+imag = int(input('Introduce el número entero de la parte imaginaria: '))
+
+n = complex(real, imag)
+
+t = complex(real, imag), complex(imag, real), n.conjugate()
+
+print('\n Vamos a mostrar en orden el número complejo, su opuesto y su conjugado\n')
+print(t)    
