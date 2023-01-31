@@ -403,3 +403,20 @@ tupla = tuple(lista)
 
 print(tupla)
 print(f'Al dividir un dividendo {A} entre un divisor {B}, el cociente es {coc} con un resto de {res}')    
+
+# Ejercicio 09
+# Pide al usuario números entre 0 y 360. Para cada número, crea una tupla donde la primera entrada sea
+# dicho número y, la segunda, la medida angular correspondiente en radianes. Recuerda, 360◦ = 2πrad. En
+# este caso, utiliza π = 3.141592653589793
+
+numero = int(input('Escribe un número entre 0 y 360: '))
+
+if numero in range(0, 361):
+    formula = numero * ((2 * 3.141592653589793) / 360)
+
+    tupla = numero, formula
+
+    print(tupla)
+
+else:
+    print('Datos incorrectos')
