@@ -232,3 +232,24 @@ anillo = zip(palabras, iniciales)
 tupla = tuple(anillo)
 
 print(tupla)
+
+
+# EXAMEN
+
+# Ejercicio 01
+# Pide al usuario el número de números enteros que va a introducir por teclado. Para cada uno de esos
+# números, crea una tupla donde la primera entrada sea el número entero y, la segunda, la palabra “par” o
+# “impar” según la paridad del número entero. Muestra la tupla recién creada al usuario.
+
+number = int(input('Cuantos números deseas introducir?: '))
+
+for n in range(1, number + 1):
+    num = int(input(f'Nº{n} - Escribe un número entero: '))
+
+    if num % 2 == 0:
+        print((num, 'par'))
+
+    else:
+        print((num, 'impar'))
+
+print('FIN DEL PROGRAMA')
