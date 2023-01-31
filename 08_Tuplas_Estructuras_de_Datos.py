@@ -316,3 +316,19 @@ tupla = tuple(lista)
 (palabra1, *resto, palabra2) = tupla
 
 print((palabra1, palabra2))
+
+# Ejercicio 05
+# Dada una lista de palabras, crea otra lista del mismo tamaño que guarde la longitud de cada palabra. Usa
+# la función zip() para crear un diccionario con claves las palabras y valores, su longitud.
+
+palabras = ['Legolas', 'Gimli', 'Aragorn', 'Boromir', 'Gandalf', 'Sam', 'Merry', 'Pippin', 'Frodo']
+longitud = []
+
+for xp in palabras:
+    longitud.append(len(xp))
+
+anillo = zip(palabras, longitud)
+
+dicc = dict(anillo)
+
+print(dicc)
