@@ -253,3 +253,23 @@ for n in range(1, number + 1):
         print((num, 'impar'))
 
 print('FIN DEL PROGRAMA')
+
+# Ejercicio 02
+# Dado un año proporcionado por el usuario, crea una tupla de dos elementos cuya primera entrada sea el año
+# y, la segunda entrada, el horóscopo chino correspondiente.
+
+year = int(input('Introduce un año: '))
+
+formula = year % 12
+
+dicc = {0: 'Mono', 1: 'Gallo', 2: 'Perro', 3: 'Cerdo', 4: 'Rata', 5: 'Buey', 6: 'Tigre', 7: 'Conejo',
+        8: 'Dragón', 9: 'Serpiente', 10: 'Caballo', 11: 'Cabra'}
+
+for key, value in dicc.items():
+
+    if key == formula:
+        t = year, value
+        print(t)
+
+    else:
+        continue
