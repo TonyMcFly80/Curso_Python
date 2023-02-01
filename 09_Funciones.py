@@ -42,3 +42,25 @@ def trian_pascal(n = 1):
 
 
 trian_pascal(5)
+
+# Tarea 03
+# Vamos a crear una función recursiva que lleve a cabo una cuenta atrás.
+
+def cuenta_atras(number):
+    """
+    Cuenta atrás recursiva.
+
+    :param
+        number: Número entero positivo.
+        if: Garantizamos que una vez llegemos a cero, parará.
+        print: Vamos mostrando el número.
+
+    :return:
+        Ejecutamos de nuevo la función restando 1 al número.
+    """
+    if number >= 0:
+        print(number)
+        return cuenta_atras(number - 1)
+
+
+cuenta_atras(30)
