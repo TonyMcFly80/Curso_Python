@@ -64,3 +64,24 @@ def cuenta_atras(number):
 
 
 cuenta_atras(30)
+
+# Tarea 04
+# Vamos a crear una función recursiva que calcule el factorial de un número entero positivo.
+
+def factorial(n):
+    """
+        Calcula el número factorial de un número entero positivo
+    
+    :param 
+        n: El número entero positivo
+    
+    :return:
+        Factorial de n
+    """
+
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
+
+print(factorial(5))
