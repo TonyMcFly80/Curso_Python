@@ -312,3 +312,33 @@ def palindromo(palabra):
         return 'Es Palindroma'
     else:
         return 'NO es palíndroma'
+
+# Ejercicio 08
+# Crea una función que dado un color en hexadecimal devuelva una lista de 3 posiciones, cada una de ellas
+# correspondiente al valor R, G o B en este orden. Los valores de RGB varían entre 0 y 255.
+
+def conv_hex_rgb(hexa):
+    """
+    Convierte un codigo de color hexadecimal en codigo rgb.
+    :param hexa: El codigo hexadecimal
+    :return: El código rgb en orden R-G-B
+    """
+    hexa = hexa.lower()
+    dicc = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9 ,'a': 10,
+            'b': 11, 'c': 12, 'd': 13, 'e': 14, 'f': 15}
+
+    lista = []
+    listaf = []
+    rgb = []
+
+    for elemento in hexa:
+        lista.append(elemento)
+
+    for i in range(len(hexa)):
+        listaf.append(dicc[hexa[i]])
+
+    rgb.append(int((listaf[0] * 16) + listaf[1]))
+    rgb.append(int((listaf[2] * 16) + listaf[3]))
+    rgb.append(int((listaf[4] * 16) + listaf[5]))
+
+    return rgb
