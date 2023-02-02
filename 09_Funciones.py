@@ -85,3 +85,30 @@ def factorial(n):
 
 
 print(factorial(5))
+
+# Tarea 05
+# Vamos a crear una función que resuelva ecuaciones de primer grado de la forma Ax + B = 0
+# Siempre que A no sea 0.
+
+def ecuaciones_grado1(a, b):
+    """
+    Resuelve ecuaciones de primer grado en la forma Ax + B = 0
+    
+    :param a: Número real (coeficiente de x)
+    
+    :param b: Número real (término independiente)
+    
+    :return: Valor de x o Datos incorrectos
+    
+    """
+    if a != 0:
+        x = -b / a
+        return x
+
+    else:
+        return 'Datos incorrectos'
+
+
+A = float(input('Dime que valor tendrá A (No puede ser 0): '))
+B = float(input('Dime que valor tendrá B: '))
+print(ecuaciones_grado1(A, B))
