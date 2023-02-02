@@ -167,6 +167,7 @@ print(calculadora(operacion, num1, num2))
 
 # EXAMEN DEL TEMA
 
+
 # Ejercicio 01
 # Crea una función que busque todos los divisores del número entero positivo dado por parámetro y devuelva
 # una lista con todos los divisores de dicho número.
@@ -189,6 +190,7 @@ def divisores(num):
 
     return lista
 
+
 # Ejercicio 02
 # Crea una función que dados dos números reales por parámetro, devuelve el mayor.
 
@@ -207,3 +209,18 @@ def comparativa(x, y):
 
     else:
         return 'Son iguales'
+
+    
+# Ejercicio 03
+# Crea una función que dado un número devuelva su valor absoluto.
+
+def valor_absoluto(num):
+    """
+    Calculamos el valor absoluto de un número.
+    :param num: Número a calcular.
+    :return: Valor absoluto de número
+    """
+    if num >= 0:
+        return num
+    else:
+        return num * -1
