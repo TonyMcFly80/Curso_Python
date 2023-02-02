@@ -163,3 +163,28 @@ operacion = str(input('Cual eliges "sum", "subract", "product", "division": '))
 num1 = int(input('Introduce un número entero: '))
 num2 = int(input('Introduce un otro número entero: '))
 print(calculadora(operacion, num1, num2))
+
+
+# EXAMEN DEL TEMA
+
+# Ejercicio 01
+# Crea una función que busque todos los divisores del número entero positivo dado por parámetro y devuelva
+# una lista con todos los divisores de dicho número.
+
+def divisores(num):
+    """
+    Busca todos los divisores de un número entero.
+    :param num: Número entero solicitado.
+    :return: Lista con todos los divisores del número entero 
+    """
+    lista = []
+
+    for i in range(1, num + 1):
+
+        if num % i == 0:
+            lista.append(i)
+
+        else:
+            continue
+
+    return lista
