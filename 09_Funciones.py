@@ -126,13 +126,13 @@ def helper_calculadora(operacion, x, y, resultado):
 def calculadora(operacion, x, y):
     """
     Calculadora que resuelve una operacion aritmética para los valores X e Y
-     
+
     :param operacion: String que indica el tipo de operación aritmética
-    
+
     :param x: Primer valor entero
-    
+
     :param y: Segundo valor entero
-    
+
     :return: Solución de la operación
     """
     if operacion == 'sum':
@@ -148,8 +148,11 @@ def calculadora(operacion, x, y):
         helper_calculadora(operacion, x, y, resultado)
 
     elif operacion == 'division':
-        resultado = x / y
-        helper_calculadora(operacion, x, y, resultado)
+        if x < y:
+            print('Esta operación no se puede resolver')
+        else:
+            resultado = x / y
+            helper_calculadora(operacion, x, y, resultado)
 
     else:
         print('Operación incorrecta')
