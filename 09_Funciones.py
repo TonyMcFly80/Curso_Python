@@ -363,3 +363,25 @@ def par_impar(lista):
             dicc['impar'] += 1
 
     return dicc
+
+
+# Ejercicio 10
+# Crea una función que dado un string por parámetro cuente cuántas veces sale cada caracter en
+# dicho string y devuelva toda esa información en un diccionario.
+
+def contar_letras(palabra):
+    """
+    Introduce un string ya sea palabra o frase y cuenta cuantas veces aparece cada letra.
+    :param palabra: Palabra o frase en cuestión.
+    :return: Un diccionario con el número de apariciones de cada letra.
+    """
+    p = palabra.lower()
+    resultado = {}
+
+    for letra in p:
+        if letra.isalpha() == True:
+            resultado[letra] = p.count(letra)
+        else:
+            continue
+
+    return resultado
