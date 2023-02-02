@@ -295,3 +295,20 @@ def mcm(num1, num2):
             y dividirlos por el máximo común divisor de esos mismos números.
     """
     return (num1 * num2) / mcd(num1, num2)
+
+
+# Ejercicio 07
+# Crea una función que dada una palabra devuelva si es palíndroma.
+
+def palindromo(palabra):
+    """
+    Analiza la palabra y devuelve si es o no palíndroma.
+    :param palabra: Palabra introducida.
+    :return: Si es o no palíndroma.
+    """
+    p = palabra.lower()
+
+    if p == p[::-1]:
+        return 'Es Palindroma'
+    else:
+        return 'NO es palíndroma'
