@@ -263,3 +263,35 @@ def mcd(num1, num2):
             mcd_final = i
     return mcd_final
 
+
+# Ejercicio 06
+# Crea una función que devuelva el MCM (mínimo común múltiplo) de 2 números proporcionados por
+# parámetro.
+
+def mcd(num1, num2):
+    """
+    Devuelve el máximo común divisor de 2 números
+    :param num1: Número entero
+    :param num2: Número entero
+    :return: El máximo común divisor de num1 y num2
+    """
+    if num1 > num2:
+        menor = num2
+    else:
+        menor = num1
+
+    for i in range(1, menor + 1):
+        if ((num1 % i == 0) and (num2 % i == 0)):
+            mcd_final = i
+    return mcd_final
+
+
+def mcm(num1, num2):
+    """
+    Calculamos el mínimo común multiplo de 2 números
+    :param num1: Número entero
+    :param num2: Número entero
+    :return: Resultado mínimo común multiplo basado en multiplar los números dados
+            y dividirlos por el máximo común divisor de esos mismos números.
+    """
+    return (num1 * num2) / mcd(num1, num2)
