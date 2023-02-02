@@ -112,3 +112,51 @@ def ecuaciones_grado1(a, b):
 A = float(input('Dime que valor tendrá A (No puede ser 0): '))
 B = float(input('Dime que valor tendrá B: '))
 print(ecuaciones_grado1(A, B))
+
+# Tarea 06
+# Vamos a crear una función que haga de calculadora (suma, resta, producto y división),
+# haciendo uso de funciones helper para mostrar la operación realizada. Pediremos por parámetro
+# tipo de operación ("sum", "subract", "product", "division") y dos números reales. Devolveremos
+# el resultado de la operación correspondiente.
+
+def helper_calculadora(operacion, x, y, resultado):
+    print(f'La {operacion} de {x} y {y} es igual {resultado}')
+
+
+def calculadora(operacion, x, y):
+    """
+    Calculadora que resuelve una operacion aritmética para los valores X e Y
+     
+    :param operacion: String que indica el tipo de operación aritmética
+    
+    :param x: Primer valor entero
+    
+    :param y: Segundo valor entero
+    
+    :return: Solución de la operación
+    """
+    if operacion == 'sum':
+        resultado = x + y
+        helper_calculadora(operacion, x, y, resultado)
+
+    elif operacion == 'subract':
+        resultado = x - y
+        helper_calculadora(operacion, x, y, resultado)
+
+    elif operacion == 'product':
+        resultado = x * y
+        helper_calculadora(operacion, x, y, resultado)
+
+    elif operacion == 'division':
+        resultado = x / y
+        helper_calculadora(operacion, x, y, resultado)
+
+    else:
+        print('Operación incorrecta')
+
+
+print('Vamos va realizar una operación matemática!')
+operacion = str(input('Cual eliges "sum", "subract", "product", "division": '))
+num1 = int(input('Introduce un número entero: '))
+num2 = int(input('Introduce un otro número entero: '))
+print(calculadora(operacion, num1, num2))
