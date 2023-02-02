@@ -188,3 +188,22 @@ def divisores(num):
             continue
 
     return lista
+
+# Ejercicio 02
+# Crea una función que dados dos números reales por parámetro, devuelve el mayor.
+
+def comparativa(x, y):
+    """
+    Calcula que número es mayor.
+    :param x: Número entero
+    :param y: Número entero
+    :return: Devuelve el número mayor de ambos en cada caso, a menos que sean iguales
+    """
+    if x > y:
+        return x
+
+    elif y > x:
+        return y
+
+    else:
+        return 'Son iguales'
