@@ -224,3 +224,21 @@ def valor_absoluto(num):
         return num
     else:
         return num * -1
+
+    
+# Ejercicio 04
+# Crea una función que devuelva True si el caracter introducido por parámetro se trata de una vocal
+# y False en caso contrario.
+
+def verificador(letra):
+    """
+    Verifica si el caracter introducido es una vocal.
+    :param letra: Caracter introducido.
+    :return: True o False si es o no vocal.
+    """
+    alf = 'aeiou'
+    if letra in alf:
+        return True
+    else:
+        return False
+    
