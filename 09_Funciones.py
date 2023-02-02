@@ -342,3 +342,24 @@ def conv_hex_rgb(hexa):
     rgb.append(int((listaf[4] * 16) + listaf[5]))
 
     return rgb
+
+
+# Ejercicio 09
+# Crea una función que dada una lista de palabras por parámetro, devuelva un diccionario que
+# contenga cuántas son de longitud par y cuántas de longitud impar.
+
+def par_impar(lista):
+    """
+    Dada una lista de palabras calculamos cuantas tiene numeros de caracteres par e impar.
+    :param lista: Lista de palabras dadas a calcular.
+    :return: Diccionario con el número de pares e impares.
+    """
+    dicc = {'par': 0, 'impar': 0}
+
+    for palabra in lista:
+        if len(palabra) % 2 == 0:
+            dicc['par'] += 1
+        else:
+            dicc['impar'] += 1
+
+    return dicc
