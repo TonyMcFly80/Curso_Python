@@ -2,6 +2,8 @@
 # NOTA: No es necesario usar código para comprobar si los datos introducidos por el usuario son correctos.
 # Vamos a interpretar que así es por ahora a menos que se especifique lo contrario.
 
+##############################################################
+
 # Tarea 01
 # Vamos a pedirle al usuario la longitud de una lista y haremos que introduzca por teclado
 # tantos números enteros como haya indicado, que se guardarán en una lista. Al acabar, imprimiremos
@@ -17,6 +19,8 @@ while n > contador:
     contador += 1
 
 print(lista)
+
+##############################################################
 
 # Tarea 02
 # Dada una lista de caracteres, le pediremos al usuario qué elemento quiere eliminar
@@ -43,6 +47,8 @@ for letra in lista:
 print('Esta es la nueva lista:')
 print(lista)
 
+##############################################################
+
 # Tarea 03
 # Vamos a pedir al usuario que ingrese 10 números, los guardaremos en una lista y mostraremos la
 # lista ordenada, siendo el usuario quien indique el orden: Ascencente o Descendente.
@@ -68,6 +74,8 @@ elif orden == 0:
 else:
     print('Datos Incorrectos')
 
+##############################################################    
+    
 # Tarea 04
 # Vamos a convertir los números impares del 0 al 30 a una lista y mostrar los elementos
 # en formato "El valor {} ocupa el indice {}".
@@ -78,6 +86,8 @@ for n in range(1, 31, 2):
     lista.append(n)
     print(f'El valor {n} ocupa el indice {lista.index(n)}')
 
+##############################################################    
+    
 # Tarea 05
 # Vamos a crear manualmente una matriz de tamaño 4 x 4 y guardarla en una lista.
 
@@ -95,6 +105,8 @@ for i in range(4):
         print(A[i][j], end='  ' if A[i][j] >= 0 else ' ')
     print('')
 
+##############################################################    
+    
 # Tarea 06
 # Vamos a sumar dos matrices con listas. Ambas matrices serán porporcionadas por el usuario,
 # así como la dimensión de las matrices:
@@ -136,6 +148,8 @@ if len(A) == len(B) and len(A[0]) == len(B[0]):
 else:
     print('No se puede realizar la suma')
 
+##############################################################    
+    
 # Tarea 07
 # Vamos a calcular el producto de dos matrices con listas. Ambas matrices serán dadas por el
 # usuario así como las dimensiones de ambas.
@@ -177,6 +191,8 @@ for i in range(n):
         print(C[i][j], end='  ')
     print('')
 
+##############################################################    
+    
 # Tarea 08
 # Vamos a introducir manualmente una matriz con numpy donde las dimensiones son proporcionadas
 # por el usuario.
@@ -194,6 +210,8 @@ for i in range(n):
         A[i, j] = float(input(f'Introduce el elemento ({i},{j}): '))
 
 print(A)
+
+##############################################################
 
 # Tarea 09
 # Vamos a sumar dos matrices con numpy. Ambas matrices las proporcionará el usuario,
@@ -223,6 +241,8 @@ matrixSum = A + B
 
 print('/// Resultado A + B ///')
 print(matrixSum)
+
+##############################################################
 
 # Tarea 10
 # Vamos a multiplicar dos matrices con numpy. Ambas matrices serán proporcionadas por el usuario,
@@ -254,7 +274,11 @@ matrixProd = A.dot(B)
 
 print(matrixProd)
 
+##############################################################
+
 # EXAMEN FINAL del Tema
+
+##############################################################
 
 # Ejercicio 1
 # Crea un programa que lea una secuencia de caracteres, guarde cada caracter en una posición de una lista y
@@ -264,6 +288,8 @@ secuencia = str(input('Escribe una secuencia de caracteres: '))
 lista = list(secuencia)
 lista.reverse()
 print(lista)
+
+##############################################################
 
 # Ejercicio 2
 # Crea un programa que lea dos strings de la misma longitud, los guarde intercalados en una lista. Por último,
@@ -292,6 +318,8 @@ for letra2 in string02:
 cadena_mezclada = ''.join(lista)
 print(cadena_mezclada)
 
+##############################################################
+
 # Ejercicio 3
 # Crea un programa que lea un string y guarde en una lista todas las consonantes.
 
@@ -306,6 +334,8 @@ for letra in palabra_final:
     lista.append(letra)
 
 print(lista)
+
+##############################################################
 
 # Ejercicio 4
 # Crea un programa que lea una palabra, la guarde en una lista y compruebe si se trata de un palíndromo.
@@ -326,6 +356,8 @@ if lista == invertida:
 else:
     print('NO es Palíndromo')
 
+##############################################################    
+    
 # Ejercicio 5
 # Crea un programa que lea una matriz 3 x 3 y devuelva el máximo de cada fila
 
@@ -370,6 +402,8 @@ elif matriz[2, 1] > matriz[2, 0] and matriz[2, 1] > matriz[2, 2]:
 else:
     print('La máxima de la fila 3 es', matriz[2, 2])
 
+##############################################################    
+    
 # Ejercicio 6
 # Crea un programa que lea un entero, n, de teclado y construya una matriz de tamaño n × n. Cada posición
 # debe contener su orden en la matriz (desde 0 hasta n al cuadrado − 1. Por ejemplo, si n es 3, deberá crearse la matriz:
@@ -392,6 +426,8 @@ for i in range(n):
         contador += 1
 
 print(np.matrix(matriz))
+
+##############################################################
 
 # Ejercicio 7
 # Crea una matriz de n × m y asigna los valores manualmente. El programa debe indicar si la suma de cada
@@ -432,6 +468,8 @@ if suma_final is True:
 
 else:
     print('La suma de las columnas NO es igual')
+    
+##############################################################    
     
 # Ejercicio 8
 # Crear un programa determina si la matriz introducida manualmente (tanto sus dimensiones como los elementos)
@@ -475,6 +513,8 @@ if matriz_identidad is True:
 else:
     print('NO es la Matriz Identidad')
 
+##############################################################    
+    
 # Ejercicio 9
 # Realiza un programa que calcule la matriz transpuesta.
 
@@ -494,6 +534,8 @@ for i in range(len(matriz_trans)):
         print(matriz_trans[i][j], end=' ')
     print('')
 
+##############################################################    
+    
 # Ejercicio 10
 # Crea un programa que pida al usuario la dimensión y cree la matriz identidad de orden
 # correspondiente con numpy.
@@ -508,3 +550,5 @@ for i in range(n):
     matriz[i, i] = 1
 
 print(matriz)
+
+##############################################################
