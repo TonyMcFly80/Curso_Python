@@ -120,3 +120,33 @@ print(list(filter(vocal_vs_conso, lista_palabras)))
 
 ##############################################################
 
+# Ejercicio 04
+# Dada una lista de números enteros, quédate con filter() con los que tengan más de 5 divisores. Necesitarás
+# una función que devuelva el número de divisores de un número dado.
+
+def divisores(num):
+    """
+    Busca todos los divisores de un número entero introducido, y si tiene 5 o más la devuelve.
+    :param num: Número entero solicitado.
+    :return: Devuelve el número si este tiene 5 o más divisores.
+    """
+    count = 0
+
+    for i in range(1, num + 1):
+
+        if num % i == 0:
+            count += 1
+
+        else:
+            continue
+
+    if count >= 5:
+
+        return num
+
+
+lista_numeros = [0, 88, 2345, 343, 22, 98, 50, 1000, 912, 19, 7]
+print(list(filter(divisores, lista_numeros)))
+
+##############################################################
+
