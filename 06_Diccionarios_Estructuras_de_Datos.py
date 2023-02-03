@@ -2,6 +2,8 @@
 # NOTA: No es necesario usar código para comprobar si los datos introducidos por el usuario son correctos.
 # Vamos a interpretar que así es por ahora a menos que se especifique lo contrario.
 
+##############################################################
+
 # Tarea 01
 # Vamos a hacer que el usuario rellene una ficha de cliente y vamos a guardar toda la información
 # en un diccionario. Para ello, vamos a pedir el nombre, apellidos, edad, dni y el dinero total que
@@ -17,6 +19,8 @@ datos_cliente = {'Nombre':    str(input('Nombre: ')),
                  }
 
 print(datos_cliente)
+
+##############################################################
 
 # Tarea 02
 # Tenemos un diccionario con 5 claves: Math, English, History, Science, IT. Cada clave contiene una
@@ -40,7 +44,9 @@ print('\n/// La Nota Final de cada Asignatura es: /// ')
 for key in asignaturas:
     nota = sum(asignaturas[key]) / 3
     print(f'Tu nota de {key} es: {nota}')
-    
+
+##############################################################
+
 # Tarea 03
 # Dado un diccionario, vamos a solicitar al usuario una clave que quiera eliminar y vamos a eliminarla.
 # Al final, le mostraremos el dicc actualizado.
@@ -60,6 +66,8 @@ eliminar = str(input('Cual deseas eliminar?: '))
 dicc.pop(eliminar)
 
 print(dicc)
+
+##############################################################
 
 # Tarea 04
 # Vamos a solicitar al usuario 8 números enteros del 0 al 9. Se supone que son los números de su
@@ -93,6 +101,8 @@ DNI = {'Número': numero, 'Letra': letra}
 
 print(DNI)
 
+##############################################################
+
 # Tarea 05
 # Vamos a leer un string por teclado y vamos a devolver un diccionario con la cantidad de apariciones
 # de cada caracter en el string proporcionado por el usuario.
@@ -112,8 +122,11 @@ for l in letras:
 
 print(dicc)
 
+##############################################################
 
 # EXAMEN DEL TEMA
+
+##############################################################
 
 # Ejercicio 1
 # Crea un programa que pida un número entero positivo por teclado y que cree un diccionario cuyas claves
@@ -130,6 +143,8 @@ for n in range(1, number + 1):
 
 print(dicc)
 
+##############################################################
+
 # Ejercicio 2
 # Escribe un programa que pregunte al usuario su nombre, edad y teléfono y lo guarde en un diccionario.
 # Después, debe mostrar por pantalla el mensaje ‘{nombre} tiene {edad} años y su número de teléfono es
@@ -145,6 +160,8 @@ telefono = dicc.setdefault('Teléfono', int(input('Cual es tu número de teléfo
 
 print(f'{nombre} tiene {edad} años y su número de teléfono es {telefono}')
 print(dicc)
+
+##############################################################
 
 # Ejercicio 3
 # Escribe un programa que cree un diccionario simulando una cesta de la compra. El programa debe preguntar
@@ -180,6 +197,8 @@ for j in cesta:
 print(f' * * * \t\t\t\t\t * * * ')
 print(f'Total\t\t\t\t\t{total}')
 
+##############################################################
+
 # Ejercicio 4
 # Crea un programa que lea números enteros hasta que introduzca el 0 y devuelva un diccionario con la
 # cantidad números positivos y negativos introducidos.
@@ -208,6 +227,8 @@ numbers.setdefault('Negativos', negativos)
 
 print(f'\n{numbers}')
 
+##############################################################
+
 # Ejercicio 5
 # Crea un programa que lea números enteros hasta que introduzca el 0 y devuelva un diccionario con la
 # cantidad números pares e impares introducidos.
@@ -235,6 +256,8 @@ numbers.setdefault('Pares', pares)
 numbers.setdefault('Impares', impares)
 
 print(f'\n{numbers}')
+
+##############################################################
 
 # Ejercicio 6
 # Crea un programa que permita al usuario introducir los nombres de los alumnos de una clase y las notas que
@@ -276,6 +299,8 @@ for key in evaluaciones:
     media = float(suma) / float(tam)
     print(f'La nota de {key} es {media}')
 
+##############################################################
+
 # Ejercicio 7
 # Crea un programa que pida un número entero positivo por teclado y que cree un diccionario cuyas claves
 # sean desde el número 1 hasta el número indicado. Los valores de cada clave serán tantos símbolos "*" como
@@ -291,6 +316,8 @@ for n in range(1, number + 1):
 
 print(dicc)
 
+##############################################################
+
 # Ejercicio 8
 # Crea un programa que pida el número de palabras a introducir. Crear un diccionario de clave la palabra y
 # de valor la longitud de dicha palabra.
@@ -304,6 +331,8 @@ for i in range(n):
     dicc.setdefault(palabra, len(palabra))
 
 print(dicc)
+
+##############################################################
 
 # Ejercicio 9
 # Crea un programa que pida el número de palabras a introducir. Crear un diccionario de clave la palabra y
@@ -320,6 +349,8 @@ for i in range(n):
     dicc.setdefault(palabra, count)
 
 print(dicc)
+
+##############################################################
 
 # Ejercicio 10
 # Dada una matriz, crea un diccionario que guarde el número de filas, el de columnas y cada fila en una entrada
@@ -339,3 +370,5 @@ for i in A:
 dicc.setdefault('Número de Filas', count)
 
 print(dicc)
+
+##############################################################
