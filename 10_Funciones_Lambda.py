@@ -42,3 +42,13 @@ print(reduce(max_a, lista_palabras))
 
 ##############################################################
 
+# Tarea 04
+# Vamos a convertir una lista de grados Celsius a grados Fahrenheit. El resultado lo mostraremos
+# como una lista.
+
+celcius = [0, 16, 32, 40, -5]
+
+print(list(map(lambda x: (x * 9 / 5) + 32, celcius)))
+
+##############################################################
+
