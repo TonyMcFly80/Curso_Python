@@ -2,6 +2,8 @@
 # NOTA: No es necesario usar código para comprobar si los datos introducidos por el usuario son correctos.
 # Vamos a interpretar que así es por ahora a menos que se especifique lo contrario.
 
+##############################################################
+
 # Tarea 01
 # Dado un str, vamos a comprobar si contiene espacios en blamco y, en caso de ser cierto,
 # contaremos cuantos tiene.
@@ -15,6 +17,8 @@ if caracter in s:
 else:
     print('No tiene espacios')
 
+##############################################################  
+    
 # Tarea 02
 # Vamos a hacer un programa que resuelva ecuaciones de primer grado de la forma Ax + B = 0
 # proporcionadas por el usuario, donde A será distinta de 0.
@@ -30,6 +34,8 @@ if A != 0:
 else:
     print('Los datos no son correctos')
 
+##############################################################    
+    
 # Tarea 03
 # Vamos a comprobar si un número es par o impar usando el operador ternario.
 
@@ -38,6 +44,8 @@ texto_par = f'El número {numero} es par.'
 texto_impar = f'El número {numero} es impar.'
 
 print(texto_par) if numero % 2 == 0 else print(texto_impar)
+
+##############################################################
 
 # Tarea 04
 # Vamos a comprobar si un año es bisiesto o no.
@@ -56,8 +64,11 @@ if year % 4 == 0:
 else:
     print(f'El año {year} NO es bisiesto')
 
+##############################################################
     
 # EXAMEN FINAL del Tema
+
+##############################################################
 
 # Ejercicio 1
 # Haz que un usuario introduzca un número real y evalúa si dicho número es positivo, negativo o
@@ -72,6 +83,8 @@ elif numero > 0:
 else:
     print('El número introducido es cero')
 
+##############################################################    
+    
 # Ejercicio 2
 # Haz que un usuario introduzca su nombre y evalúa con operadores if y else si dicho nombre tiene una
 # longitud mayor a 10 caracteres o no. Devuelve por pantalla el resultado en cada caso.
@@ -81,12 +94,16 @@ if len(nombre) >= 10:
     print(f'Tu nombre {nombre} tiene al menos 10 caracteres')
 else:
     print(f'Tu nombre {nombre} es inferior a 10 caracteres')
+
+##############################################################
     
 # Ejercicio 3
 # Realiza el ejercicio anterior con el uso del operador ternario.
 
 nombre = input('Escribe tu nombre: ')
 print(f'Tu nombre {nombre} tiene al menos 10 caracteres') if len(nombre) > 10 else print(f'Tu nombre {nombre} es inferior a 10 caracteres')
+
+##############################################################
 
 # Ejercicio 4
 # Haz que un usuario introduzca dos números enteros positivos. Comprueba si el primer número introducido
@@ -103,6 +120,8 @@ elif num1 == num2:
 else:
     print(f'El número {num1} es menor a {num2}.')
 
+##############################################################    
+    
 # Ejercicio 5
 # Haz que un usuario introduzca dos números enteros positivos. Suponiendo que el primer número introducido
 # por el usuario es mayor o igual al segundo número introducido por el usuario, comprueba que la división del
@@ -128,6 +147,8 @@ if num1 >= num2:
 else:
     print('Los números no son válidos')
 
+##############################################################    
+    
 # Ejercicio 6
 # Fusiona lo hecho en los ejercicios 4 y 5 para que:
 # 1. Un usuario introduzca dos números enteros por pantalla.
@@ -156,6 +177,8 @@ if num1 >= num2:
 else:
     print(f'El número {num1} es menor a {num2}.')
     print('Los números no son válidos')
+
+##############################################################    
     
 # Ejercicio 7
 # Haz que un usuario introduzca dos números enteros positivos. Comprueba si el mayor es múltiplo del menor.
@@ -175,6 +198,8 @@ if num1 > num2:
 else:
     print('Los números no son válidos')
     
+##############################################################    
+    
 # Ejercicio 8
 # Haz que un usuario introduzca una palabra y comprueba si dicha palabra empieza por mayúscula. Devuelve
 # por pantalla el resultado en cada caso.
@@ -189,6 +214,8 @@ elif palabra[0].isupper() is True:
 
 else:
     print(f'La palabra \"{palabra}\" comienza por minúsculas.')
+    
+##############################################################    
     
 # Ejercicio 9
 # Haz un usuario introduza una letra y comprueba si se trata de una vocal. Si el usuario introduce un string
@@ -206,6 +233,8 @@ elif letra == 'a' or letra == 'e' or letra == 'i' or letra == 'o' or letra == 'u
 else:
     print(f'El dato introducido \"{letra}\" se trata de una consonante')
 
+##############################################################    
+    
 # Ejercicio 10
 # Dada una ecuación de segundo grado:
 # 1. Comprueba que el coeficiente A es distinto de 0.
@@ -240,3 +269,4 @@ if a != 0:
 else:
     print('A es igual a 0, por tanto, datos incorrectos.')
 
+##############################################################
