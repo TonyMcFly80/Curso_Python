@@ -77,3 +77,16 @@ mult = lambda x: (x - 1) * x * (x + 1)
 print(mult(5))
 
 ##############################################################
+
+# Ejercicio 02
+# Crea una función lambda que dados dos números devuelva si el primero es mayor.
+
+comparativa = lambda x, y: (x > y)
+
+print('Introduce 2 números y te diremos si el primero es mayor que el segundo')
+num1 = int(input('Primer número: '))
+num2 = int(input('Segundo número: '))
+print(f'Es {num1} mayor que {num2}?')
+print(comparativa(num1, num2))
+
+##############################################################
