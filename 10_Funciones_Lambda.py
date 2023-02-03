@@ -252,6 +252,6 @@ def valor_absoluto(num):
 
 lista_numeros = [0, -8, 45, -3, 22, 18, -6, 100, 91, -19, 7]
 
-print(sorted(lista_numeros, key=valor_absoluto,))
+print(sorted(lista_numeros, key=valor_absoluto))
 
 ##############################################################
