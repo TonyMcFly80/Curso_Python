@@ -255,3 +255,28 @@ lista_numeros = [0, -8, 45, -3, 22, 18, -6, 100, 91, -19, 7]
 print(sorted(lista_numeros, key=valor_absoluto))
 
 ##############################################################
+
+# Ejercicio 10
+# Dada una lista de palabras, ordénalos con sorted() por número de consonates de mayor a menor.
+
+def count_conso(palabra):
+    """
+    Cuenta el número de consonantes de una palabra.
+    :param palabra: La palabra introducida.
+    :return: El número de consonantes de la palabra.
+    """
+    count = 0
+    for letra in palabra:
+        if letra == 'a' or letra == 'e' or letra == 'i' or letra == 'o' or letra == 'u':
+            continue
+        else:
+            count += 1
+
+    return count
+
+
+lista_palabras = ['america', 'amapola', 'ambrosia', 'algas', 'aleluya', 'enchufe', 'lila', 'gryffindor']
+
+print(sorted(lista_palabras, key=count_conso, reverse=True))
+
+##############################################################
