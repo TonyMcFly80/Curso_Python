@@ -1,4 +1,6 @@
-# EXAMEN Números en Python (Reales e imaginarios)
+# EXAMEN FINAL del Tema Números en Python (Reales e imaginarios)
+# NOTA: No es necesario usar código para comprobar si los datos introducidos por el usuario son correctos.
+# Vamos a interpretar que así es por ahora a menos que se especifique lo contrario.
 
 ##############################################################
 
