@@ -169,3 +169,12 @@ lista_palabras = ['america', 'amapola', 'ambrosia', 'algas', 'aleluya', 'enchufe
 print(reduce(more_long, lista_palabras))
 
 ##############################################################
+
+# Ejercicio 06
+# Dada una lista de palabras, calcula el número de vocales de cada una con map().
+
+l_p = ['america', 'amapola', 'ambrosia', 'algas', 'aleluya', 'enchufe', 'lila', 'gryffindor']
+
+print(list(map(lambda p: p.count('a') + p.count('e') + p.count('i') + p.count('o') + p.count('u'), l_p)))
+
+##############################################################
