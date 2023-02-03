@@ -52,3 +52,15 @@ print(list(map(lambda x: (x * 9 / 5) + 32, celcius)))
 
 ##############################################################
 
+# Tarea 05
+# Vamos a ordenar una lista de palabras por el número de apariciones de la letra indicada por
+# el usuario. El orden será descendente.
+
+lista_palabras = ['salchichas', 'amapola', 'ambrosia', 'algas', 'yoyo', 'silla', 'pan']
+
+l = str(input('Introduce una letra: '))
+
+print(sorted(lista_palabras, key=lambda x: x.count(l), reverse=True))
+
+##############################################################
+
