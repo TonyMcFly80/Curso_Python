@@ -178,3 +178,50 @@ l_p = ['america', 'amapola', 'ambrosia', 'algas', 'aleluya', 'enchufe', 'lila', 
 print(list(map(lambda p: p.count('a') + p.count('e') + p.count('i') + p.count('o') + p.count('u'), l_p)))
 
 ##############################################################
+
+# Ejercicio 07
+# Dada una lista de palabras, quédate con reduce() y map() con la palabra con más consonantes.
+# Necesitarás una función que cuente el número de consonantes de una palabra y otra que dados dos
+# números, devuelva el mayor.
+
+from functools import reduce
+
+
+def count_conso(palabra):
+    """
+    Cuenta el número de consonantes de una palabra.
+    :param palabra: La palabra introducida.
+    :return: El número de consonantes de la palabra.
+    """
+    count = 0
+    for letra in palabra:
+        if letra == 'a' or letra == 'e' or letra == 'i' or letra == 'o' or letra == 'u':
+            continue
+        else:
+            count += 1
+
+    return count
+
+
+def num_max(num1, num2):
+    """
+    Calcula cual es el mayor número entre dos números.
+    :param num1: Primer número.
+    :param num2: Segundo número.
+    :return: El número más alto.
+    """
+    if num1 > num2:
+        return num1
+
+    else:
+        return num2
+
+
+lista_palabras = ['america', 'amapola', 'ambrosia', 'algas', 'aleluya', 'enchufe', 'lila', 'gryffindor']
+
+print(lista_palabras)
+conso = list(map(count_conso, lista_palabras))
+print(conso)
+print(reduce(num_max, conso))
+
+##############################################################
