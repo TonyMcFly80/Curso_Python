@@ -2,6 +2,8 @@
 # NOTA: No es necesario usar código para comprobar si los datos introducidos por el usuario son correctos.
 # Vamos a interpretar que así es por ahora a menos que se especifique lo contrario.
 
+##############################################################
+
 # Tarea 01
 # Vamos a crear una función que cuente y devuelva todas las apariciones de una letra proporcionada
 # por parámetro en una frase también proporcionada por parámetro.
@@ -17,6 +19,8 @@ frase = str(input('Escribe una frase: '))
 letra = str(input('Escribe una letra: '))
 
 print(f'En la frase \"{frase}\" la letra \"{letra}\" aparace \"{contar_letras(fr=frase, le=letra)}\" veces.')
+
+##############################################################
 
 # Tarea 02
 # Vamos a crear una función que muestre por pantalla el triángulo de Pascal. Por parámetro se
@@ -43,6 +47,8 @@ def trian_pascal(n = 1):
 
 trian_pascal(5)
 
+##############################################################
+
 # Tarea 03
 # Vamos a crear una función recursiva que lleve a cabo una cuenta atrás.
 
@@ -65,6 +71,8 @@ def cuenta_atras(number):
 
 cuenta_atras(30)
 
+##############################################################
+
 # Tarea 04
 # Vamos a crear una función recursiva que calcule el factorial de un número entero positivo.
 
@@ -85,6 +93,8 @@ def factorial(n):
 
 
 print(factorial(5))
+
+##############################################################
 
 # Tarea 05
 # Vamos a crear una función que resuelva ecuaciones de primer grado de la forma Ax + B = 0
@@ -112,6 +122,8 @@ def ecuaciones_grado1(a, b):
 A = float(input('Dime que valor tendrá A (No puede ser 0): '))
 B = float(input('Dime que valor tendrá B: '))
 print(ecuaciones_grado1(A, B))
+
+##############################################################
 
 # Tarea 06
 # Vamos a crear una función que haga de calculadora (suma, resta, producto y división),
@@ -164,9 +176,11 @@ num1 = int(input('Introduce un número entero: '))
 num2 = int(input('Introduce un otro número entero: '))
 print(calculadora(operacion, num1, num2))
 
+##############################################################
 
 # EXAMEN DEL TEMA
 
+##############################################################
 
 # Ejercicio 01
 # Crea una función que busque todos los divisores del número entero positivo dado por parámetro y devuelva
@@ -190,6 +204,7 @@ def divisores(num):
 
     return lista
 
+##############################################################
 
 # Ejercicio 02
 # Crea una función que dados dos números reales por parámetro, devuelve el mayor.
@@ -210,6 +225,7 @@ def comparativa(x, y):
     else:
         return 'Son iguales'
 
+##############################################################    
     
 # Ejercicio 03
 # Crea una función que dado un número devuelva su valor absoluto.
@@ -225,7 +241,8 @@ def valor_absoluto(num):
     else:
         return num * -1
 
-    
+##############################################################
+
 # Ejercicio 04
 # Crea una función que devuelva True si el caracter introducido por parámetro se trata de una vocal
 # y False en caso contrario.
@@ -241,7 +258,8 @@ def verificador(letra):
         return True
     else:
         return False
-    
+
+##############################################################    
     
 # Ejercicio 05
 # Crea una función que devuelva el MCD (máximo común divisor) de 2 números proporcionados por parámetro.
@@ -263,6 +281,7 @@ def mcd(num1, num2):
             mcd_final = i
     return mcd_final
 
+##############################################################
 
 # Ejercicio 06
 # Crea una función que devuelva el MCM (mínimo común múltiplo) de 2 números proporcionados por
@@ -296,6 +315,7 @@ def mcm(num1, num2):
     """
     return (num1 * num2) / mcd(num1, num2)
 
+##############################################################
 
 # Ejercicio 07
 # Crea una función que dada una palabra devuelva si es palíndroma.
@@ -312,6 +332,8 @@ def palindromo(palabra):
         return 'Es Palindroma'
     else:
         return 'NO es palíndroma'
+
+##############################################################
 
 # Ejercicio 08
 # Crea una función que dado un color en hexadecimal devuelva una lista de 3 posiciones, cada una de ellas
@@ -343,6 +365,7 @@ def conv_hex_rgb(hexa):
 
     return rgb
 
+##############################################################
 
 # Ejercicio 09
 # Crea una función que dada una lista de palabras por parámetro, devuelva un diccionario que
@@ -364,6 +387,7 @@ def par_impar(lista):
 
     return dicc
 
+##############################################################
 
 # Ejercicio 10
 # Crea una función que dado un string por parámetro cuente cuántas veces sale cada caracter en
@@ -385,3 +409,5 @@ def contar_letras(palabra):
             continue
 
     return resultado
+
+##############################################################
