@@ -90,3 +90,33 @@ print(f'Es {num1} mayor que {num2}?')
 print(comparativa(num1, num2))
 
 ##############################################################
+
+# Ejercicio 03
+# Dada una lista de palabras, quédate con filter() con las que tengan más vocales que consonantes.
+# Necesitarás una función que devuelva si una palabra tiene más vocales que consonantes.
+
+def vocal_vs_conso(palabra):
+    """
+    Devuelve la palabra introducida si esta tiene más vocales que consonantes.
+    :param palabra: La palabra introducida.
+    :return: Si la palabra tiene más vocales la devuelve, al contrario no devuelve nada.
+    """
+    count = 0
+    for letra in palabra:
+        if letra == 'a' or letra == 'e' or letra == 'i' or letra == 'o' or letra == 'u':
+            count += 1
+        else:
+            continue
+
+    final = len(palabra) - count
+
+    if final < (len(palabra) / 2):
+
+        return palabra
+
+
+lista_palabras = ['america', 'amapola', 'ambrosia', 'algas', 'aleluya', 'enchufe', 'lila']
+print(list(filter(vocal_vs_conso, lista_palabras)))
+
+##############################################################
+
