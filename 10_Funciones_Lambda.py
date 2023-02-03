@@ -150,3 +150,22 @@ print(list(filter(divisores, lista_numeros)))
 
 ##############################################################
 
+# Ejercicio 05
+# Dada una lista de palabras, quédate con reduce() con la palabra más larga. Necesitarás una función que
+# compare dos palabras y devuelva la que tenga mayor longitud.
+
+from functools import reduce
+
+
+def more_long(palara1, palabra2):
+
+    if len(palara1) > len(palabra2):
+        return palara1
+    else:
+        return palabra2
+
+
+lista_palabras = ['america', 'amapola', 'ambrosia', 'algas', 'aleluya', 'enchufe', 'lila', 'gryffindor']
+print(reduce(more_long, lista_palabras))
+
+##############################################################
