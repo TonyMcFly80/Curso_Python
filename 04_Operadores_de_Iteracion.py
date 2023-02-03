@@ -2,6 +2,8 @@
 # NOTA: No es necesario usar código para comprobar si los datos introducidos por el usuario son correctos.
 # Vamos a interpretar que así es por ahora a menos que se especifique lo contrario.
 
+##############################################################
+
 # Tarea 01
 # Con un bucle while, dado un string vamos a recorrer una frase y contar el número total de vocales.
 
@@ -19,6 +21,8 @@ while n <= (long - 1):
         n += 1
 
 print(f'La frase introducida tiene {total} vocales.')
+
+##############################################################
 
 # Tarea 02
 # Con un bucle while, dados dos números enteros proporcionados por el usuario, vamos a encontrar el
@@ -47,6 +51,8 @@ elif num1 < num2:
 else:
     print('Error ambos números no pueden ser iguales')
 
+##############################################################    
+    
 # Tarea 03
 # Vamos a hacer que el usuario introduzca números por teclado e ir sumándolos. Cuando el usuario
 # introduzca 0 saldremos del bucle while. Al salir del bucle, con un else mostraremos la suma.
@@ -61,6 +67,8 @@ while n != 0:
 else:
     print(f'La suma total es {suma}')
 
+##############################################################    
+    
 # Tarea 04
 # Imaginemos las letras del abecedario ordenadas y dispuestas en círculo. Es decir, a la derecha
 # de la A está la B, luego la C, y así sucesivamente hasta la Z. A la derecha de la Z, se encuentra de
@@ -87,6 +95,8 @@ while inicio <= 90:
         print(chr((inicio - 26) + n))
     inicio += 1
 
+##############################################################    
+    
 # Tarea 05
 # Vamos a recorrer un string dado un bucle for y lo vamos a devolver del revés.
 
@@ -97,6 +107,8 @@ for letra in frase:
     frase_invertida = letra + frase_invertida
 
 print(frase_invertida)
+
+##############################################################
 
 # Tarea 06
 # Con un bucle for, dada una progresión aritmética de números enteros indicada por el usuario
@@ -119,6 +131,8 @@ for n in range(ini, fin + 1, salto):
 
 print(f'La suma total es de {suma}')
 
+##############################################################
+
 # Tarea 07
 # Con un bucle for, vamos a recorrer un string dado y vamos a imprimir todas las letras salvo por
 # la letra indicada por el usuario.
@@ -136,6 +150,8 @@ for letra in frase:
         final += letra
 
 print(final)
+
+##############################################################
 
 # Tarea 08
 # Dado un string, con un bucle for vamos a imprimirlo sin vocales y vamos a salir del bucle
@@ -163,7 +179,11 @@ for letra in frase:
 
 print(f_final)
 
+##############################################################
+
 # EXAMEN FINAL del Tema
+
+##############################################################
 
 # Ejercicio 1
 # Haz que el usuario introduzca números enteros por teclado. Mientras el usuario no introduzca el 0, muestra
@@ -183,6 +203,8 @@ while numero > 0:
         break
     numero = int(input('Introduce un número entero: '))
 
+##############################################################    
+    
 # Ejercicio 2
 # Haz que el usuario introduzca una palabra y una letra por teclado. Comprueba si la palabra contiene la
 # letra o no e indícaselo al usuario por pantalla.
@@ -205,6 +227,8 @@ for x in palabra:
     else:
         continue
        
+##############################################################    
+    
 # Ejercicio 3
 # Haz que el usuario introduzca precios por teclado (si introduce 0, entonces es que ha finalizado). Si el usuario
 # pasa de 200€, entonces ya no debe poder introducir más precios pues se ha pasado de presupuesto. Sea cual
@@ -239,6 +263,8 @@ while ahorros > 0:
         print(f'No tienes tanto dinero para retirar. Tienes disponible {ahorros} euros')
         continue
  
+##############################################################
+
 # Ejercicio 4
 # Haz que el usuario introduzca números enteros por teclado. Mientras el usuario no introduzca el 0, calcula
 # cuántos números positivos y cuántos negativos ha introducido y muéstraselo al final.
@@ -264,6 +290,8 @@ while True:
         print('Fin del programa...')
         break
 
+##############################################################        
+        
 # Ejercicio 5
 # Haz que el usuario introduzca números por teclado. Mientras el usuario no introduzca el 0, pídele otro
 # número. Cuando el usuario introduzca el 0, muéstrale la media aritmética de los números que ha introducido.
@@ -282,6 +310,8 @@ while True:
         print(f'La media aritmética es {suma/2}')
         break
 
+##############################################################        
+        
 # Ejercicio 6
 # Haz que el usuario introduzca dos números enteros por teclado. El primero será el extremo izquierdo del
 # intervalo y, el segundo, el extremo derecho. Imprime todos los números que se encuentren entre los dos
@@ -295,6 +325,8 @@ numero2 = int(input('Escribe un 2do número entero: '))
 for numero in range(numero1, numero2+1):
     print(numero)
 
+##############################################################    
+    
 # Ejercicio 7
 # Haz que el usuario introduzca dos números enteros por teclado. El primero será el extremo izquierdo del
 # intervalo y, el segundo, el extremo derecho. Imprime la suma de todos los múltiplos de 3 que se encuentren
@@ -318,6 +350,8 @@ for numero in range(numero1, numero2+1):
 
 print(f'La suma de los múltiplos de 3 es {suma_mult_3}')
 
+##############################################################
+
 # Ejercicio 8
 # Pídele al usuario cuántos números va a introducir. Con un bucle for, solicítale esa cantidad de números y
 # calcula su producto.
@@ -334,6 +368,8 @@ for n in range(0, total):
 
 print(f'El producto es {producto}')
 
+##############################################################
+
 # Ejercicio 9
 # Haz que el usuario introduzca su edad y el año actual. Imprime todos los años que han pasado desde su año
 # de nacimiento hasta el año actual (ambos incluidos).
@@ -346,6 +382,8 @@ year_nacimiento = year_actual - edad
 for years in range(year_nacimiento, year_actual+1):
     print(years)
   
+##############################################################
+
 # Ejercicio 10
 # Haz que el usuario introduzca un número entero entre 3 y 10. Muestra un cuadrado y luego un triángulo rectángulo de
 # lado y altura, respectivamente, el número entero introducido. Por ejemplo, si el usuario introduce como
@@ -362,3 +400,5 @@ numero = int(input('Escribe un número entero entre 3 y 10: '))
 
 for i in range(numero):
     print('* ' * (i + 1) + ' ' * (20 - (2 * i + 2) + 1) + '* ' * numero)
+
+##############################################################    
