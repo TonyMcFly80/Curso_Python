@@ -64,3 +64,10 @@ print(sorted(lista_palabras, key=lambda x: x.count(l), reverse=True))
 
 ##############################################################
 
+# EXAMEN DEL TEMA
+
+##############################################################
+
+# Ejercicio 01
+# Crea una función lambda que dado un número entero multiplique por su anterior y su siguiente. Por ejemplo,
+# si proporcionamos n = 3, nos tendrá que devolver 2 · 3 · 4 = 24.
