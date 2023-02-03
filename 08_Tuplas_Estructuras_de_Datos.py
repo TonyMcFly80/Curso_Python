@@ -2,6 +2,8 @@
 # NOTA: No es necesario usar código para comprobar si los datos introducidos por el usuario son correctos.
 # Vamos a interpretar que así es por ahora a menos que se especifique lo contrario.
 
+##############################################################
+
 # Tarea 01
 # Vamos a pedirle al usuario el número de números enteros que va a introducir por teclado. Para cada
 # uno de esos números, vamos a crear una tupla donde la primera entrada sea el número entero, y la segunda,
@@ -28,6 +30,8 @@ for n in range(1, number + 1):
         tuplas.append(t)
 
 print(tuplas)
+
+##############################################################
 
 # Tarea 02
 # Vamos a pedirle al usuario números enteros del 1 al 10 hasta que introduzca el 0. Para cada uno
@@ -67,6 +71,8 @@ while True:
 
     else:
         print('Número incorrecto')
+
+##############################################################
 
 # Tarea 03
 # Dada una frase introducida por el usuario, vamos a crear una lista con 3 tuplas y 2 entradas.
@@ -110,6 +116,8 @@ t3 = ('Espacios en la frase', count_e)
 lista.append(t3)
 
 print(lista)
+
+##############################################################
 
 # Tarea 04
 # Vamos a pedirle al usuario una asignatura ('Mates', 'Lengua', 'Historia', 'Informática' o 'Música')
@@ -181,6 +189,8 @@ lista.append(t5)
 print('\nLas notas medias de las asignaturas son:\n')
 print(lista)
 
+##############################################################
+
 # Tarea 05
 # Vamos a pedirle al usuario el número de puntos de un plano que quiere introducir. Para cada punto,
 # vamos a solicitarle las coordenadas x e y. Guardaremos las coordenadas (x, y) en tuplas de tamaño 3,
@@ -215,7 +225,9 @@ for i in range(n):
 for punto in puntos:
     x, y, cuadrante = punto
     print(f"El punto ({x}, {y}) pertenece al cuadrante {cuadrante}")
-    
+
+##############################################################
+
 # Tarea 06
 # Dada una lista de palabras, vamos a crear otra lista del mismo tamaño que guarde la primera
 # letra de cada palabra en la posición correspondiente. Por último, con la función zip() crearemos
@@ -233,8 +245,11 @@ tupla = tuple(anillo)
 
 print(tupla)
 
+##############################################################
 
-# EXAMEN
+# EXAMEN FINAL
+
+##############################################################
 
 # Ejercicio 01
 # Pide al usuario el número de números enteros que va a introducir por teclado. Para cada uno de esos
@@ -253,6 +268,8 @@ for n in range(1, number + 1):
         print((num, 'impar'))
 
 print('FIN DEL PROGRAMA')
+
+##############################################################
 
 # Ejercicio 02
 # Dado un año proporcionado por el usuario, crea una tupla de dos elementos cuya primera entrada sea el año
@@ -274,6 +291,8 @@ for key, value in dicc.items():
     else:
         continue
 
+##############################################################
+
 # Ejercicio 03
 # Dada una frase proporcionada por el usuario, crea una lista de tuplas indicando palabra, longitud de cada
 # palabra, letra inicial y posición que ocupan dentro de la frase.
@@ -293,6 +312,8 @@ for palabra in final:
     lista.append(t)
 
 print(lista)
+
+##############################################################
 
 # Ejercicio 04
 # Haz que el usuario introduzca palabras hasta que introduzca una palabra vacía. Guarda todas las palabras
@@ -317,6 +338,8 @@ tupla = tuple(lista)
 
 print((palabra1, palabra2))
 
+##############################################################
+
 # Ejercicio 05
 # Dada una lista de palabras, crea otra lista del mismo tamaño que guarde la longitud de cada palabra. Usa
 # la función zip() para crear un diccionario con claves las palabras y valores, su longitud.
@@ -332,6 +355,8 @@ anillo = zip(palabras, longitud)
 dicc = dict(anillo)
 
 print(dicc)
+
+##############################################################
 
 # Ejercicio 06
 # Haz que el usuario introduzca palabras hasta que introduzca una palabra vacía. Guarda todas las palabras
@@ -362,6 +387,8 @@ tupa = tuple(lista)
 
 print(tupa)
 
+##############################################################
+
 # Ejercicio 07
 # Crea una lista de 20 tuplas de tamaño 2. La primera entrada será un número entero entre 1 y 20 y la segunda
 # entrada contendrá una lista con los 10 primeros múltiplos del número entero correspondiente. Por último,
@@ -379,6 +406,8 @@ if numero in range(1, 21):
         print(f'{numero} x {n} = {numero * n}')
 else:
     print('Número incorrecto')
+
+##############################################################
 
 # Ejercicio 08
 # Pide al usuario dos números enteros por teclado. Asegúrate de que el primero es mayor o igual al segundo.
@@ -404,6 +433,8 @@ tupla = tuple(lista)
 print(tupla)
 print(f'Al dividir un dividendo {A} entre un divisor {B}, el cociente es {coc} con un resto de {res}')    
 
+##############################################################
+
 # Ejercicio 09
 # Pide al usuario números entre 0 y 360. Para cada número, crea una tupla donde la primera entrada sea
 # dicho número y, la segunda, la medida angular correspondiente en radianes. Recuerda, 360◦ = 2πrad. En
@@ -421,6 +452,8 @@ if numero in range(0, 361):
 else:
     print('Datos incorrectos')
 
+##############################################################
+
 # Ejercicio 10
 # Pide al usuario números complejos. Para cada número, crea una tupla donde la primera entrada sea dicho
 # número complejo, la segunda, su opuesto y, la tercera, su conjugado.
@@ -436,3 +469,5 @@ t = complex(real, imag), complex(imag, real), n.conjugate()
 
 print('\n Vamos a mostrar en orden el número complejo, su opuesto y su conjugado\n')
 print(t)    
+
+##############################################################
