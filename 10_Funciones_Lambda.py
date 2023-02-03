@@ -24,3 +24,21 @@ print(list(filter(lambda x: (x > 0), nums)))
 
 ##############################################################
 
+# Tarea 03
+# Dada una lista de palabras, vamos a quedarnos con la palabra con más "a".
+
+from functools import reduce
+
+
+def max_a(x, y):
+    if x.count('a') > y.count('a'):
+        return x
+    return y
+
+
+lista_palabras = ['salchichas', 'amapola', 'ambrosia', 'algas']
+
+print(reduce(max_a, lista_palabras))
+
+##############################################################
+
