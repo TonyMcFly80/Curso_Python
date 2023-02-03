@@ -225,3 +225,13 @@ print(conso)
 print(reduce(num_max, conso))
 
 ##############################################################
+
+# Ejercicio 08
+# Dada una lista de números enteros, calcula el número anterior con map().
+
+lista_numeros = [0, 88, 2345, 343, 22, 98, 50, 1000, 912, 19, 7]
+
+print(list(map(lambda n: n - 1, lista_numeros)))
+
+##############################################################
+
