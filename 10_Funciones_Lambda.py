@@ -235,3 +235,23 @@ print(list(map(lambda n: n - 1, lista_numeros)))
 
 ##############################################################
 
+# Ejercicio 09
+# Dada una lista de números reales, ordénalos con sorted() por valor absoluto de menor a mayor.
+
+def valor_absoluto(num):
+    """
+    Calculamos el valor absoluto de un número.
+    :param num: Número a calcular.
+    :return: Valor absoluto de número
+    """
+    if num >= 0:
+        return num
+    else:
+        return num * -1
+
+
+lista_numeros = [0, -8, 45, -3, 22, 18, -6, 100, 91, -19, 7]
+
+print(sorted(lista_numeros, key=valor_absoluto,))
+
+##############################################################
