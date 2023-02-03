@@ -2,6 +2,8 @@
 # NOTA: No es necesario usar código para comprobar si los datos introducidos por el usuario son correctos.
 # Vamos a interpretar que así es por ahora a menos que se especifique lo contrario.
 
+##############################################################
+
 # Tarea 01
 # Vamos a pedirle al usuario una frase y vamos a guardar en un conjunto las letras que aparecen
 # en dicha frase.
@@ -19,6 +21,8 @@ for l in f:
         continue
 
 print(set1)
+
+##############################################################
 
 # Tarea 02
 # Vamos a pedirle al usuario dos palabras y vamos a calcular la intersección de las letras de cada
@@ -53,6 +57,8 @@ set3 = set1.intersection(set2)
 
 print(set3)
 
+##############################################################
+
 # Tarea 03
 # Vamos a pedirle 4 números enteros al usuario. Se corresponderán con los extremos de los intervalos
 # [a,b] y [c,d]. Vamos a generar dos conjuntos que guarden, respectivamente, los enteros contenidos en
@@ -83,6 +89,8 @@ else:
 
     print(set3)
 
+##############################################################
+
 # Tarea 04
 # Vamos a guardar en un conjunto los números primos comprendidos entre 2 y el número n que nos
 # indique el usuario mediante la criba de Eratóstenes.
@@ -102,7 +110,9 @@ for i in range(len(numeros)):   # Índice de toda la lista
             primos.discard(numeros[j])      # Y lo eliminamos del conjunto
 
 print(primos)
-    
+
+##############################################################
+
 # Tarea 05
 # Vamos a crear un programa que nos devuelva el elemento máximo de un conjunto sin utilizar
 # la función max().
@@ -120,8 +130,11 @@ for n in set1:
 
 print(f'El número mayor de {set1} es {ok}')
 
+##############################################################
 
 # EXAMEN DEL TEMA
+
+##############################################################
 
 # Ejercicio 01
 # Dado un número entero introducido por teclado, guarda sus divisores en un conjunto y muéstralo.
@@ -142,6 +155,8 @@ for i in range(1, n + 1):
 print('Estos son los divisores:')
 print(set1)
 
+##############################################################
+
 # Ejercicio 02
 # Crea un programa que dado un conjunto, nos devuelva su mínimo. Debes hacerlo sin recurrir a la función
 # min().
@@ -158,6 +173,8 @@ for n in set1:
         continue
 
 print(f'El número menor de {set1} es {ok}')
+
+##############################################################
 
 # Ejercicio 03
 # Dada una frase introducida por teclado, guarda en un conjunto todas las palabras que empiecen por la letra
@@ -191,6 +208,8 @@ if set1 == set():
 else:
     print(set1)
 
+##############################################################
+
 # Ejercicio 04
 # Dado un conjunto, crea un programa que nos devuelva el caracter con mayor valor ASCII. Debes hacerlo sin
 # recurrir a la función max().
@@ -219,7 +238,9 @@ for n in set1:
         continue
 
 print(f'La letra mayor de {set1} es {dicc2[ok]}')
-    
+
+##############################################################
+
 # Ejercicio 05
 # Dado un conjunto, crea un programa que nos devuelva el caracter con menor valor ASCII. Debes hacerlo sin
 # recurrir a la función min().
@@ -248,6 +269,8 @@ for n in set1:
         continue
 
 print(f'La letra menor de {set1} es {dicc2[ok]}')
+
+##############################################################
 
 # Ejercicio 06
 # Dada una frase introducida por teclado, guarda en un conjunto todas las palabras que contengan la letra
@@ -283,6 +306,8 @@ if set1 == set():
 else:
     print(set1)
 
+##############################################################
+
 # Ejercicio 07
 # Dada una frase introducida por teclado, guarda en un conjunto la primera letra de cada palabra sin hacer
 # uso del método .split().
@@ -302,6 +327,8 @@ for letra in ini:
 
 print(set1)
 
+##############################################################
+
 # Ejercicio 08
 # Dada una frase introducida por teclado, guarda en un conjunto todas las palabras con longitud par.
 
@@ -319,6 +346,8 @@ for palabra in lista_palabras:
         continue
 
 print(set1)
+
+##############################################################
 
 # Ejercicio 09
 # Dada una frase introducida por teclado, guarda en un conjunto todas las palabras que acaben por la letra
@@ -353,6 +382,8 @@ if set1 == set():
 else:
     print(set1)
 
+##############################################################
+
 # Ejercicio 10
 # Dada una frase introducida por teclado, guarda en un conjunto todas las palabras palíndromas.
 
@@ -373,3 +404,5 @@ for palabra in lista_palabras:
         continue
 
 print(set1)    
+
+##############################################################
