@@ -37,3 +37,43 @@ print(df_mod)
 print(df_mod.shape)
 
 ##############################################################
+
+# Tarea 02
+# Del dataframe df_mod creado en el ejercicio anterior, vamos a mostrar cada columna por separado
+# con un bucle for.
+# Finalmente, vamos a quedarnos con las 3 últimas columnas, y ese nuevo subdataframe lo guardaremos
+# en una variable words2, para no modificar el dataframe original.
+
+import pandas as pd
+
+words = ['leña', 'fuego', 'campo', 'hierba', 'ala', 'insectos', 'aire', 'animales', 'mesa', 'cuchara']
+
+data = {'word': words,
+        'length': map(len, words),
+        'start': map(lambda palabra: palabra[0], words),
+        'end': map(lambda palabra: palabra[-1], words),
+        'isPalindrome': map(lambda palabra: palabra == palabra[::-1], words)
+        }
+
+df = pd.DataFrame(data=data)
+
+df_mod = df.set_index('word')
+
+df_mod.index.names = [None]
+
+count = 0
+
+# For para mostrar cada columna por separado:
+
+for j in df_mod:
+    print(f'\n=== {j.upper()} ===')
+    print(df_mod[df_mod.columns[count]])
+    count += 1
+
+# Nueva variable que muestra las 3 íltimas columnas:
+
+words2 = df_mod[df_mod.columns[1:]]
+print('\n=== NUEVA LISTA ===')
+print(words2)
+
+##############################################################
