@@ -77,3 +77,48 @@ print('\n=== NUEVA LISTA ===')
 print(words2)
 
 ##############################################################
+
+# Tarea 03
+# Del dataframe df_mod, vamos a mostrar las 5 primeras filas, las 5 últimas filas y después, vamos
+# a guardar una copia en la variable df_mod_copy. Finalmente, vamos a modificar los nombres de las
+# columnas de df_mod_copy a 'Longitud', 'Principio', 'Fin' y 'Palíndromo'.
+
+import pandas as pd
+
+words = ['leña', 'fuego', 'campo', 'hierba', 'ala', 'insectos', 'aire', 'animales', 'mesa', 'cuchara']
+
+data = {'word': words,
+        'length': map(len, words),
+        'start': map(lambda palabra: palabra[0], words),
+        'end': map(lambda palabra: palabra[-1], words),
+        'isPalindrome': map(lambda palabra: palabra == palabra[::-1], words)
+        }
+
+df = pd.DataFrame(data=data)
+
+df_mod = df.set_index('word')
+
+df_mod.index.names = [None]
+
+# Mostramos la 5 primeras filas
+print('/// LAS 5 PRIMERAS FILAS DEL DATAFRAME ///\n')
+print(df_mod.head(5))
+
+# Mostramos las 5 últimas filas
+print('\n/// LAS 5 ÚLTIMAS FILAS DEL DATAFRAME ///\n')
+print(df_mod.tail(5))
+
+# Hacemos una copia
+df_mod_copy = df_mod.copy()
+
+# Modificamos los nombres de las columnas
+df_mod_copy.rename(columns={'length': 'Longitud',
+                            'start': 'Principio',
+                            'end': 'Fin',
+                            'isPalindrome': 'Palíndromo'}, inplace=True)
+
+print('\n/// COPIA DE DATAFRAME CON COLUMNAS MODIFICADAS ///\n')
+print(df_mod_copy)
+
+##############################################################
+
