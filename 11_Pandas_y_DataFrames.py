@@ -485,3 +485,57 @@ print(words.sort_values(by=['length'], ascending=False))
 
 ##############################################################
 
+# Ejercicio 10
+# Convierte la columna vowels a lista y, con sorted() ordénala de mayor a menor.
+# Investiga para ello el método .tolist().
+
+import pandas as pd
+
+
+def vocal(palabra):
+        """
+        Cuenta las vocales de una palabra.
+        :param palabra: La palabra a contar.
+        :return: Número entero de vocales.
+        """
+        vocales = 'aeiou'
+        c_vocales = 0
+        for letra in palabra:
+                if letra.lower() in vocales:
+                        c_vocales += 1
+                else:
+                        continue
+        return c_vocales
+
+
+def conso(palabra):
+        """
+        Cuenta las consonantes de una palabra.
+        :param palabra: La palabra a contar.
+        :return: Número entero de consonantes.
+        """
+        consonantes = 'bcdfghjklmnñpqrstvwxyz'
+        c_conso = 0
+        for letra in palabra:
+                if letra.lower() in consonantes:
+                        c_conso += 1
+                else:
+                        continue
+        return c_conso
+
+
+palabras = ['euro', 'diez', 'algas', 'broma', 'cicuta', 'fatiga', 'nachos', 'jadeos', 'hazañas', 'boutique']
+
+data = {'word': palabras,
+        'length': map(len, palabras),
+        'vowels': map(lambda palabra: vocal(palabra), palabras),
+        'consonants': map(lambda palabra: conso(palabra), palabras)}
+
+words = pd.DataFrame(data=data)
+
+df_vowels = words.copy()
+lista = df_vowels['vowels'].tolist()
+orden = sorted(lista, reverse=True)
+print(orden)
+
+##############################################################
