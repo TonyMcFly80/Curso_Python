@@ -251,3 +251,24 @@ points = pd.DataFrame(data=data)
 print(points.query('x > 0 and y > 0'))
 
 ##############################################################
+
+# Ejercicio 05
+# Del dataset points, muestra las observaciones de la forma:
+# “El punto ({x}, {y}) {no/sí} pertenece al primer cuadrante”.
+
+import pandas as pd
+
+data = {'x': [2, -4, 6, -8, 10, 12, 14, -16, 18, -20, 22, 24, 26, 28, -30],
+        'y': [1, 3, -5, 7, 9, -11, 13, 15, -17, 19, 21, -23, 25, 27, 29]}
+
+points = pd.DataFrame(data=data)
+
+for i in points.itertuples():
+    if i[0] >= 0 and i[1] >= 0:
+        c = 'si'
+        print(f'El punto ({i[0]}, {i[1]}) {c} pertecene al primer cuadrante')
+    else:
+        c = 'no'
+        print(f'El punto ({i[0]}, {i[1]}) {c} pertecene al primer cuadrante')
+        
+##############################################################
