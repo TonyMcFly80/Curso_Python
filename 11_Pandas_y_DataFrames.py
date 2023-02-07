@@ -327,3 +327,56 @@ words = pd.DataFrame(data=data)
 print(words)
 
 ##############################################################
+
+# Ejercicio 07
+# Muestra las 10 observaciones de words con el formato “La palabra {word} tiene {length} letras,
+# de las cuales {vowels} son vocales y {consonants} consonantes”.
+
+import pandas as pd
+
+
+def vocal(palabra):
+        """
+        Cuenta las vocales de una palabra.
+        :param palabra: La palabra a contar.
+        :return: Número entero de vocales.
+        """
+        vocales = 'aeiou'
+        c_vocales = 0
+        for letra in palabra:
+                if letra.lower() in vocales:
+                        c_vocales += 1
+                else:
+                        continue
+        return c_vocales
+
+
+def conso(palabra):
+        """
+        Cuenta las consonantes de una palabra.
+        :param palabra: La palabra a contar.
+        :return: Número entero de consonantes.
+        """
+        consonantes = 'bcdfghjklmnñpqrstvwxyz'
+        c_conso = 0
+        for letra in palabra:
+                if letra.lower() in consonantes:
+                        c_conso += 1
+                else:
+                        continue
+        return c_conso
+
+
+palabras = ['euro', 'diez', 'algas', 'broma', 'cicuta', 'fatiga', 'nachos', 'jadeos', 'hazañas', 'boutique']
+
+data = {'word': palabras,
+        'length': map(len, palabras),
+        'vowels': map(lambda palabra: vocal(palabra), palabras),
+        'consonants': map(lambda palabra: conso(palabra), palabras)}
+
+words = pd.DataFrame(data=data)
+
+for i in words.itertuples():
+        print(f'La palabra {i[1]} tiene {i[2]} letras, de las cuales {i[3]} son vocales y {i[4]} son consonantes')
+
+##############################################################
