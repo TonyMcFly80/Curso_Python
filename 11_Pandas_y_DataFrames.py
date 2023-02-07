@@ -122,3 +122,31 @@ print(df_mod_copy)
 
 ##############################################################
 
+# Tarea 04
+# Vamos a mostrar las filas del dataframe df_mod con el siguiente formato:
+# "La palabra {identificadorFila} {si/no} es un palíndromo de {longitud} letras".
+
+import pandas as pd
+
+words = ['leña', 'fuego', 'ama', 'hierba', 'ala', 'insectos', 'aire', 'animales', 'tenet', 'cuchara']
+
+data = {'word': words,
+        'length': map(len, words),
+        'start': map(lambda palabra: palabra[0], words),
+        'end': map(lambda palabra: palabra[-1], words),
+        'isPalindrome': map(lambda palabra: palabra == palabra[::-1], words)
+        }
+
+df = pd.DataFrame(data=data)
+
+df_mod = df.set_index('word')
+
+df_mod.index.names = [None]
+
+for i in df_mod.itertuples():
+    if i[4] is True:
+        print(f'La palabra \"{i[0]}\", es un palíndromo de \"{i[1]}\" letras.')
+    else:
+        print(f'La palabra \"{i[0]}\", no es un palíndromo de \"{i[1]}\" letras.')
+
+##############################################################
