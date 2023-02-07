@@ -150,3 +150,42 @@ for i in df_mod.itertuples():
         print(f'La palabra \"{i[0]}\", no es un palíndromo de \"{i[1]}\" letras.')
 
 ##############################################################
+
+# Tarea 05
+# Del dataframe df_mod vamos a transformar la columna start a dataframe para iterar sobre sus
+# filas. A continuación vamos a transformar la columna length en lista para eliminar una de sus entradas
+# con el método .remove().
+
+import pandas as pd
+
+words = ['leña', 'fuego', 'ama', 'hierba', 'ala', 'insectos', 'aire', 'animales', 'tenet', 'cuchara']
+
+data = {'word': words,
+        'length': map(len, words),
+        'start': map(lambda palabra: palabra[0], words),
+        'end': map(lambda palabra: palabra[-1], words),
+        'isPalindrome': map(lambda palabra: palabra == palabra[::-1], words)
+        }
+
+df = pd.DataFrame(data=data)
+
+df_mod = df.set_index('word')
+
+df_mod.index.names = [None]
+
+# Transformamos la columna star en dataframe e iteramos
+
+df_start = df_mod.copy()
+df_start = df_start['start'].to_frame()
+
+for i in df_start.itertuples():
+    print(f'La palabra {i[0]} comienza por {i[1]}')
+
+# Transformamos la columna length en lista para eliminar una de sus entradas con el método .remove()
+
+df_length = df_mod.copy()
+df_length = df_length['length'].tolist()
+df_length.remove(6)
+print(df_length)
+
+##############################################################
