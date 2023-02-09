@@ -223,8 +223,6 @@ RationalNumber.division(p, q)
 # .fromRealNumber() que dado un número real se encarga de buscar su expresión en racional.
 # Por ejemplo, dado 5.4, tendremos que crear el objeto RationalNumber con numerador 54 y denominador 10.
 # Investiga el método math.modf() para este caso.
-import math
-
 
 def bigger(a, b):
   """
@@ -239,6 +237,7 @@ def bigger(a, b):
     return a
   return b
 
+
 def lower(a, b):
   """
   Devuelve el menor número de 2 números reales dados.
@@ -251,6 +250,7 @@ def lower(a, b):
   if a <= b:
     return a
   return b
+
 
 def mcd(a, b):
   """
@@ -270,6 +270,7 @@ def mcd(a, b):
     max = r
   return max
 
+
 def helper(n, d):
     """
     Print de los decoradores de la Clase RatinalNumber y no repetir código.
@@ -278,6 +279,7 @@ def helper(n, d):
     :return: print
     """
     print(f'{n} / {d} = {n / d}')
+
 
 class RationalNumber():
     """
@@ -372,7 +374,7 @@ class RationalNumber():
 p2 = RationalNumber(1).random()
 p3 = RationalNumber(1).zero()
 p4 = RationalNumber(1).one()
-p5 = RationalNumber(1).fromRealNumber(5.4)
+p5 = RationalNumber(1).fromRealNumber(0.72)
 
 print(p2)
 print(p3)
