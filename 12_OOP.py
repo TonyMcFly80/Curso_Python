@@ -124,7 +124,7 @@ class RationalNumber():
 
     def quotient(self):
         cociente = self.numerator // self.denominator
-        print(cociente)
+        return cociente
 
     def isInfinite(self):
         if self.denominator == 0:
@@ -142,7 +142,7 @@ q = RationalNumber(2, 4)
 print(q)
 
 # Mostramos el cociente
-q.quotient()
+print(q.quotient())
 
 # Mostramos si el denominador es 0
 print(q.isInfinite())
