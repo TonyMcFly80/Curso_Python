@@ -152,3 +152,63 @@ q.simplify()
 q.mathFormat()
 
 ##############################################################
+
+# Tarea 04
+# Vamos a implementar lo siguientes métodos estáticos:
+# .sum(), .subract(), .product(), .division()
+
+def helper(n, d):
+    """
+    Print de los decoradores de la Clase RatinalNumber y no repetir código.
+    :param n: Numerador
+    :param d: Donominador
+    :return: print
+    """
+    print(f'{n} / {d} = {n / d}')
+
+
+class RationalNumber():
+    """
+    Clase para trabajar con números racionales.
+    """
+    def __init__(self, numerator, denominator=1):
+        if type(numerator) is int and type(denominator) is int:
+            self.numerator = numerator
+            self.denominator = denominator
+        else:
+            print('ERROR... Ambos números deben ser números enteros')
+
+    @staticmethod
+    def sum(p, q):
+        num = p.numerator * q.denominator + q.numerator * p.denominator
+        den = p.denominator * q.denominator
+        helper(num, den)
+
+    @staticmethod
+    def subract(p, q):
+        num = p.numerator * q.denominator - q.numerator * p.denominator
+        den = p.denominator * q.denominator
+        helper(num, den)
+
+    @staticmethod
+    def product(p, q):
+        num = p.numerator * q.numerator
+        den = p.denominator * q.denominator
+        helper(num, den)
+
+    @staticmethod
+    def division(p, q):
+        num = p.numerator * q.denominator
+        den = p.denominator * q.numerator
+        helper(num, den)
+
+
+p = RationalNumber(1, 2)
+q = RationalNumber(2, 3)
+
+RationalNumber.sum(p, q)
+RationalNumber.subract(p, q)
+RationalNumber.product(p, q)
+RationalNumber.division(p, q)
+
+##############################################################
