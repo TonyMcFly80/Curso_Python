@@ -587,3 +587,62 @@ cero3d = Point3D.zero()
 print(cero3d)
 
 ##############################################################
+
+# Tarea 07
+# Dadas las clases Triangle y Square, vamos a crear la clase Pyramid que hereda de las dos anteriores.
+# Practicaremos la herencia múltiple. Vamos a implementar el constructor, el método .area() y el
+# método .volume() usando el método .super() donde sea necesario para poder construir una pirámide
+# regular con base cuadrada y calcular correctamente el área y el volumen.
+
+class Square(object):
+    def __init__(self, base):
+        self.base = base
+
+    @property
+    def perimeter(self):
+        return 4 * self.base
+
+    @property
+    def area(self):
+        return self.base * self.base
+
+
+class Triangle(object):
+    def __init__(self, base, height):
+        self.base = base
+        self.height = height
+
+    @property
+    def area(self):
+        return 0.5 * self.base * self.height
+
+import math
+
+class Pyramid(Square, Triangle):
+    def __init__(self, base, height):
+        super().__init__(base)
+        # Altura de la pirámide
+        self.height = height
+
+    @property
+    def slant_height(self):
+        return math.sqrt((self.base / 2) ** 2 + self.height ** 2)
+
+    @property
+    def area(self):
+        base_area = super().area
+        base_perimeter = super().perimeter
+        lateral_area = 0.5 * base_perimeter * self.slant_height
+        return lateral_area + base_area
+
+    @property
+    def volume(self):
+        base_area = super().area
+        return base_area * self.height / 3
+
+
+p = Pyramid(2, 2)
+print(p.area)
+print(p.volume)
+
+##############################################################
