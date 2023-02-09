@@ -382,3 +382,161 @@ print(p4)
 print(p5)
 
 ##############################################################
+
+# Tarea 05
+# Vamos a convertir los métodos .quotient() y .mathFormat() en una propiedad.
+
+def bigger(a, b):
+  """
+  Devuelve el mayor número de 2 números reales dados.
+  Args:
+    a: Número real
+    b: Número real
+  Returns:
+    Número real
+  """
+  if a >= b:
+    return a
+  return b
+
+
+def lower(a, b):
+  """
+  Devuelve el menor número de 2 números reales dados.
+  Args:
+    a: Número real
+    b: Número real
+  Returns:
+    Número real
+  """
+  if a <= b:
+    return a
+  return b
+
+
+def mcd(a, b):
+  """
+  Devuelve el MCD de dos números enteros.
+  Args:
+    a: Número entero
+    b: Número entero
+  Returns:
+    max: Número entero
+  """
+  r = 0
+  max = bigger(a, b)
+  min = lower(a, b)
+  while(min > 0):
+    r = min
+    min = max % min
+    max = r
+  return max
+
+
+def helper(n, d):
+    """
+    Print de los decoradores de la Clase RatinalNumber y no repetir código.
+    :param n: Numerador
+    :param d: Donominador
+    :return: print
+    """
+    print(f'{n} / {d} = {n / d}')
+
+
+class RationalNumber():
+    """
+    Clase para trabajar con números racionales.
+    """
+    def __init__(self, numerator, denominator=1):
+        if type(numerator) is int and type(denominator) is int:
+            self.numerator = numerator
+            self.denominator = denominator
+        else:
+            print('ERROR... Ambos números deben ser números enteros')
+
+    def __str__(self):
+        return f'{self.numerator} / {self.denominator}'
+
+    @property
+    def mathFormat(self):
+        from IPython.display import display, Latex
+        display(Latex(f'${self.numerator}\\over{self.denominator}$'))
+
+    @property
+    def quotient(self):
+        cociente = self.numerator / self.denominator
+        return cociente
+
+    def isInfinite(self):
+        if self.denominator == 0:
+            return True
+        return False
+
+    def simplify(self):
+        div = mcd(self.numerator, self.denominator)
+        self.numerator = int(self.numerator / div)
+        self.denominator = int(self.denominator / div)
+
+    @staticmethod
+    def sum(p, q):
+        num = p.numerator * q.denominator + q.numerator * p.denominator
+        den = p.denominator * q.denominator
+        helper(num, den)
+
+    @staticmethod
+    def subract(p, q):
+        num = p.numerator * q.denominator - q.numerator * p.denominator
+        den = p.denominator * q.denominator
+        helper(num, den)
+
+    @staticmethod
+    def product(p, q):
+        num = p.numerator * q.numerator
+        den = p.denominator * q.denominator
+        helper(num, den)
+
+    @staticmethod
+    def division(p, q):
+        num = p.numerator * q.denominator
+        den = p.denominator * q.numerator
+        helper(num, den)
+
+    @classmethod
+    def random(cls):
+        import random
+        num = random.randrange(1, 101)
+        den = random.randrange(1, 101)
+        return cls(num, den)
+
+    @classmethod
+    def zero(cls):
+        num = 0
+        den = 1
+        return cls(num, den)
+
+    @classmethod
+    def one(cls):
+        num = 1
+        den = 1
+        return cls(num, den)
+
+    @classmethod
+    def fromRealNumber(cls, f):  # f representa al float que tenemos que introducir
+        import math
+        num = f
+        den = 1
+        d, i = math.modf(num)
+        while d != 0:
+            num *= 10
+            den *= 10
+            d, i = math.modf(num)
+        num = int(num)
+        den = int(den)
+        return cls(num, den)
+
+
+q = RationalNumber.random()
+q.mathFormat
+print(q.quotient)
+
+##############################################################
