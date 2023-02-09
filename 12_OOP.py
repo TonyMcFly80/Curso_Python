@@ -646,3 +646,24 @@ print(p.area)
 print(p.volume)
 
 ##############################################################
+
+# EXAMEN DEL TEMA
+
+##############################################################
+
+# Ejercicio 01
+# A lo largo de toda esta taraea vas a construir la clase Date. Empieza con el constructor,
+# que recibe por parámetros el día (day), mes (month) y año (year). Los 3 parámetros son de tipo int
+# y por defecto todos valen 1.
+
+class Date(object):
+
+    def __init__(self, day=1, month=1, year=1):
+        if type(day) is int and type(month) is int and type(year) is int:
+            self.day = day
+            self.month = month
+            self.year = year
+        else:
+            print('ERROR... Datos introducidos incorrectos')
+
+##############################################################
