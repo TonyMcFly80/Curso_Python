@@ -54,3 +54,101 @@ print(q)
 q.mathFormat()
 
 ##############################################################
+
+# Tarea 03
+# Implementa un método de instancia .quotient() que devuelva el cociente
+# Implementa un método de instancia .isInfinite() que devuelva si el denominador es 0 o no
+# Implementa un método de instancia .simplify() que simplifique la fracción a la fracción irreducible
+
+def bigger(a, b):
+  """
+  Devuelve el mayor número de 2 números reales dados.
+  Args:
+    a: Número real
+    b: Número real
+  Returns:
+    Número real
+  """
+  if a >= b:
+    return a
+  return b
+
+def lower(a, b):
+  """
+  Devuelve el menor número de 2 números reales dados.
+  Args:
+    a: Número real
+    b: Número real
+  Returns:
+    Número real
+  """
+  if a <= b:
+    return a
+  return b
+
+def mcd(a, b):
+  """
+  Devuelve el MCD de dos números enteros.
+  Args:
+    a: Número entero
+    b: Número entero
+  Returns:
+    max: Número entero
+  """
+  r = 0
+  max = bigger(a, b)
+  min = lower(a, b)
+  while(min > 0):
+    r = min
+    min = max % min
+    max = r
+  return max
+
+class RationalNumber():
+    """
+    Clase para trabajar con números racionales.
+    """
+    def __init__(self, numerator, denominator=1):
+        if type(numerator) is int and type(denominator) is int:
+            self.numerator = numerator
+            self.denominator = denominator
+        else:
+            print('ERROR... Ambos números deben ser números enteros')
+
+    def __str__(self):
+        return f'{self.numerator} / {self.denominator}'
+
+    def mathFormat(self):
+        from IPython.display import display, Latex
+        display(Latex(f'${self.numerator}\\over{self.denominator}$'))
+
+    def quotient(self):
+        cociente = self.numerator // self.denominator
+        print(cociente)
+
+    def isInfinite(self):
+        if self.denominator == 0:
+            return True
+        return False
+
+    def simplify(self):
+        div = mcd(self.numerator, self.denominator)
+        self.numerator = int(self.numerator / div)
+        self.denominator = int(self.denominator / div)
+
+
+# Creamos y mostramos el objeto
+q = RationalNumber(2, 4)
+print(q)
+
+# Mostramos el cociente
+q.quotient()
+
+# Mostramos si el denominador es 0
+print(q.isInfinite())
+
+# Mostramos la fracción irreducible
+q.simplify()
+print(q)
+
+##############################################################
