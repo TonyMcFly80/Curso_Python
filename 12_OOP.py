@@ -139,7 +139,7 @@ class RationalNumber():
 
 # Creamos y mostramos el objeto
 q = RationalNumber(2, 4)
-print(q)
+q.mathFormat()
 
 # Mostramos el cociente
 print(q.quotient())
@@ -149,6 +149,6 @@ print(q.isInfinite())
 
 # Mostramos la fracción irreducible
 q.simplify()
-print(q)
+q.mathFormat()
 
 ##############################################################
