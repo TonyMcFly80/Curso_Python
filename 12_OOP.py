@@ -361,7 +361,7 @@ class RationalNumber():
         import math
         num = f
         den = 1
-        d, i = math.modf(num)  # d representa la parte decimal / i representa la parte entera
+        d, i = math.modf(num)  
         while d != 0:
             num *= 10
             den *= 10
