@@ -540,3 +540,50 @@ q.mathFormat
 print(q.quotient)
 
 ##############################################################
+
+# Tarea 06
+# Dada la clase Point2D, vamos a crear la clase Point3D que hereda de Point2D.
+# Vamos a modificar todos los métodos y usar el método .super() donde sea necesario para poder usarlos
+# con puntos en 3 dimensiones.
+
+class Point2D(object):
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f'({self.x}, {self.y})'
+
+    @classmethod
+    def zero(cls):
+        return cls(0, 0)
+
+
+class Point3D(Point2D):
+
+    def __init__(self, x, y, z):
+        super().__init__(x, y)
+        self.z = z
+
+    def __str__(self):
+        return super().__str__()[:-1] + f', {self.z})'
+
+    @classmethod
+    def zero(cls):
+        return cls(0, 0, 0)
+
+
+p = Point2D(1, -1)
+print(p)
+
+q = Point3D(1, 2, 3)
+print(q)
+
+cero2d = Point2D.zero()
+print(cero2d)
+
+cero3d = Point3D.zero()
+print(cero3d)
+
+##############################################################
