@@ -657,7 +657,9 @@ print(p.volume)
 # y por defecto todos valen 1.
 
 class Date(object):
-
+    """
+    Muestra dia, mes y año.
+    """
     def __init__(self, day=1, month=1, year=1):
         if type(day) is int and type(month) is int and type(year) is int:
             self.day = day
@@ -665,5 +667,6 @@ class Date(object):
             self.year = year
         else:
             print('ERROR... Datos introducidos incorrectos')
+
 
 ##############################################################
