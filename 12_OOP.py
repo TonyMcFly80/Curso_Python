@@ -726,3 +726,65 @@ fecha = Date(1, 9, 980)
 print(fecha)
 
 ##############################################################
+
+# Ejercicio 03
+# Implementa el método de instancia .isLeap() que diga si el año es bisiesto o no.
+
+class Date(object):
+    """
+    Muestra dia, mes y año.
+    """
+
+    def __init__(self, day=1, month=1, year=1):
+        if type(day) is int and type(month) is int and type(year) is int:
+            self.day = day
+            self.month = month
+            self.year = year
+        else:
+            print('ERROR... Datos introducidos incorrectos')
+
+    @staticmethod
+    def add_zero_d(day):
+        if day < 10:
+            return f'0{day}'
+        else:
+            return f'{day}'
+
+    @staticmethod
+    def add_zero_m(month):
+        if month < 10:
+            return f'0{month}'
+        else:
+            return f'{month}'
+
+    @staticmethod
+    def add_zero_y(year):
+        if year in range(1, 10):
+            return f'000{year}'
+        elif year in range(10, 100):
+            return f'00{year}'
+        elif year in range(100, 1000):
+            return f'0{year}'
+        else:
+            return f'{year}'
+
+    def __str__(self):
+        return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
+
+    def isLead(self):
+        if self.year % 4 == 0:
+            if self.year % 100 == 0:
+                if self.year % 400 == 0:
+                    print(f'El año {self.year} SI es bisiesto')
+                else:
+                    print(f'El año {self.year} NO es bisiesto')
+            else:
+                print(f'El año {self.year} SI es bisiesto')
+        else:
+            print(f'El año {self.year} NO es bisiesto')
+
+
+fecha = Date(1, 9, 980)
+fecha.isLead()
+
+##############################################################
