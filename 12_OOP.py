@@ -670,3 +670,59 @@ class Date(object):
 
 
 ##############################################################
+
+# Ejercicio 02
+# Configura el método .__str__() para que muestre la fecha en formato day / month / year.
+# Si el valor del día o el mes son menores a 10, mostrar el valor con un 0 delante.
+# Por ejemplo, si day = 8, month = 7 y year = 1998, entonces se debería mostrar 08 / 07 / 1998.
+# En el caso del año, si el año es menor a 1000, mostrar con un cero delante; si es menor a 100,
+# mostrar con 2 ceros delante; y si es menor a 10, mostrar con 3 ceros delante.
+# PISTA: Puedes crear una función que dado un número entero y el número de cifras que debe tener,
+# rellene con ceros a la izquierda hasta completar el número de cifras indicado.
+
+class Date(object):
+    """
+    Muestra dia, mes y año.
+    """
+
+    def __init__(self, day=1, month=1, year=1):
+        if type(day) is int and type(month) is int and type(year) is int:
+            self.day = day
+            self.month = month
+            self.year = year
+        else:
+            print('ERROR... Datos introducidos incorrectos')
+
+    @staticmethod
+    def add_zero_d(day):
+        if day < 10:
+            return f'0{day}'
+        else:
+            return f'{day}'
+
+    @staticmethod
+    def add_zero_m(month):
+        if month < 10:
+            return f'0{month}'
+        else:
+            return f'{month}'
+
+    @staticmethod
+    def add_zero_y(year):
+        if year in range(1, 10):
+            return f'000{year}'
+        elif year in range(10, 100):
+            return f'00{year}'
+        elif year in range(100, 1000):
+            return f'0{year}'
+        else:
+            return f'{year}'
+
+    def __str__(self):
+        return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
+
+
+fecha = Date(1, 9, 980)
+print(fecha)
+
+##############################################################
