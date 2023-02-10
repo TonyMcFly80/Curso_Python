@@ -788,3 +788,92 @@ fecha = Date(1, 9, 980)
 fecha.isLead()
 
 ##############################################################
+
+# Ejercicio 04
+# Implementa un método de instancia .totalMonthDays() que diga el número de días del mes.
+# Ten en cuenta que en los años bisiestos, Febrero tiene 29 días.
+# Implementa el método de instancia .validDate() que determine si una fecha es válida. Modifica el
+# constructor para que si la fecha introducida no es válida, devuelva un mensaje indicando
+# “¡¡¡La fecha introducida no es una fecha válida!!!”.
+
+class Date(object):
+    """
+    Muestra dia, mes y año.
+    """
+    def __init__(self, day=1, month=1, year=1):
+        self.day = day
+        self.month = month
+        self.year = year
+        if not self.validDate():
+            print('¡¡¡La fecha introducida no es una fecha válida!!!')
+
+    def validDate(self):
+        d = self.day
+        m = self.month
+        y = self.year
+        if d in range(1, 32) and m in range(1, 13) and y in range(1, 2024):
+            return True
+        return False
+
+    @staticmethod
+    def add_zero_d(day):
+        if day < 10:
+            return f'0{day}'
+        else:
+            return f'{day}'
+
+    @staticmethod
+    def add_zero_m(month):
+        if month < 10:
+            return f'0{month}'
+        else:
+            return f'{month}'
+
+    @staticmethod
+    def add_zero_y(year):
+        if year in range(1, 10):
+            return f'000{year}'
+        elif year in range(10, 100):
+            return f'00{year}'
+        elif year in range(100, 1000):
+            return f'0{year}'
+        else:
+            return f'{year}'
+
+    def __str__(self):
+        return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
+
+    def isLead(self):
+        if self.year % 4 == 0:
+            if self.year % 100 == 0:
+                if self.year % 400 == 0:
+                    print(f'El año {self.year} SI es bisiesto')
+                    return True
+                else:
+                    print(f'El año {self.year} NO es bisiesto')
+                    return False
+            else:
+                print(f'El año {self.year} SI es bisiesto')
+                return True
+        else:
+            print(f'El año {self.year} NO es bisiesto')
+            return False
+
+    def totalMonthDays(self):
+        m = self.month
+        y = Date(self.day, self.month, self.year).isLead()
+        if m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12:
+            print('El mes tiene 31 días')
+        elif m == 4 or m == 6 or m == 9 or m == 11:
+            print('El mes tiene 30 días')
+        elif m == 2 and y is True:
+            print('El mes tiene 29 días')
+        elif m == 2 and y is False:
+            print('El mes tiene 28 días')
+
+
+fecha = Date(17, 2, 980)
+print(fecha)
+fecha.totalMonthDays()
+
+##############################################################
