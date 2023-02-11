@@ -874,7 +874,7 @@ class Date(object):
 
 fecha = Date(17, 2, 980)
 print(fecha)
-fecha.totalMonthDays()
+print(f'El mes tiene un total de {fecha.totalMonthDays()} días')
 
 ##############################################################
 
