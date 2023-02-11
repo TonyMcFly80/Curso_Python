@@ -1109,9 +1109,9 @@ class Date(object):
 f1 = Date(14, 9, 1985)
 f2 = Date(12, 7, 970)
 
-print(Date.areEqual(f1, f2))
-print(Date.isLater(f1, f2))
-print(Date.isPrevious(f1, f2))
+print(f'Son iguales {f1} y {f2} ? : {Date.areEqual(f1, f2)}')
+print(f'Es {f1} posterior a {f2} ?: {Date.isLater(f1, f2)}')
+print(f'Es {f1} anterior a {f2} ?: {Date.isPrevious(f1, f2)}')
 
 ##############################################################
 
