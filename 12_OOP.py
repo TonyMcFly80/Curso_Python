@@ -1114,3 +1114,224 @@ print(Date.isLater(f1, f2))
 print(Date.isPrevious(f1, f2))
 
 ##############################################################
+
+# Ejercicio 07
+# Implementa el método de clase .firstDayOfTheYear() que dado un año cree un objeto Date con la
+# fecha correspondiente al primer día del año indicado.
+# Implementa el método de clase .lastDayOfTheYear() que dado un año cree un objeto Date con la
+# fecha correspondiente al último día del año indicado.
+# Implementa el método de instancia .plusDay() que incremente un día la fecha. Ten en cuenta que si
+# estamos en el último día del mes y añadimos un día, tendremos que cambiar de mes (pasar al siguiente).
+# Y lo mismo si estamos en el último día del año (tendremos que pasar al siguiente año).
+# Implementa el método de instancia .minusDay() que decremente un día la fecha. Ten en cuenta que si
+# estamos en el primer día del mes y restamos un día, tendremos que cambiar de mes (pasar al anterior).
+# Y lo mismo si estamos en el primer día del año (tendremos que pasar al año anterior).
+
+class Date(object):
+    """
+    Muestra dia, mes y año.
+    """
+    def __init__(self, day=1, month=1, year=1):
+        self.day = day
+        self.month = month
+        self.year = year
+        if not self.validDate():
+            print('¡¡¡La fecha introducida no es una fecha válida!!!')
+
+    def validDate(self):    # Validamos que la fecha sea correcta
+        d = self.day
+        m = self.month
+        y = self.year
+        if d in range(1, 32) and m in range(1, 13) and y in range(1, 2024):
+            return True
+        return False
+
+    @staticmethod
+    def add_zero_d(day):    # Añadimos ceros al día
+        if day < 10:
+            return f'0{day}'
+        else:
+            return f'{day}'
+
+    @staticmethod
+    def add_zero_m(month):  # Añadimos ceros al mes
+        if month < 10:
+            return f'0{month}'
+        else:
+            return f'{month}'
+
+    @staticmethod
+    def add_zero_y(year):   # Añadimos ceros al año
+        if year in range(1, 10):
+            return f'000{year}'
+        elif year in range(10, 100):
+            return f'00{year}'
+        elif year in range(100, 1000):
+            return f'0{year}'
+        else:
+            return f'{year}'
+
+    def __str__(self):  # Formato en el que se imprime
+        return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
+
+    def isLead(self):   # No dice si el año es bisiesto
+        if self.year % 4 == 0:
+            if self.year % 100 == 0:
+                if self.year % 400 == 0:
+                    return True
+                else:
+                    return False
+            else:
+                return True
+        else:
+            return False
+
+    def totalMonthDays(self):   # Nos dice cuantos días tiene el mes
+        m = self.month
+        y = Date(self.day, self.month, self.year).isLead()
+        if m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12:
+            return 31
+        elif m == 4 or m == 6 or m == 9 or m == 11:
+            return 30
+        elif m == 2 and y is True:
+            return 29
+        elif m == 2 and y is False:
+            return 28
+
+    @property
+    def monthName(self):    # Nos da el nombre del mes en inglés
+        meses = ['January', 'Februari', 'March', 'April', 'May', 'June', 'July',
+                 'August', 'September', 'Octuber', 'November', 'December']
+        print(meses[self.month - 1])
+
+    @staticmethod
+    def areEqual(fecha1, fecha2):   # Compara dos fechas y dice sin son iguales
+        if str(fecha1) == str(fecha2):
+            return f'{fecha1} y {fecha2} son iguales'
+        return f'{fecha1} y {fecha2} son distintas'
+
+    @staticmethod
+    def isLater(fecha1, fecha2):    # Compara dos fechas y da el año posterior
+        fecha1 = str(fecha1)
+        d1 = int(fecha1[:2])
+        m1 = int(fecha1[5:7])
+        y1 = int(fecha1[10:])
+
+        fecha2 = str(fecha2)
+        d2 = int(fecha2[:2])
+        m2 = int(fecha2[5:7])
+        y2 = int(fecha2[10:])
+
+        if y1 > y2:
+            return f'{fecha1} es posterior a {fecha2}'
+        elif m1 > m2 and y1 >= y2:
+            return f'{fecha1} es posterior a {fecha2}'
+        elif d1 > d2 and m1 >= m2 and y1 >= y2:
+            return f'{fecha1} es posterior a {fecha2}'
+        else:
+            return f'{fecha1} no es posterior a {fecha2}'
+
+    @staticmethod
+    def isPrevious(fecha1, fecha2):  # Compara dos fechas y da el año anterior
+        fecha1 = str(fecha1)
+        d1 = int(fecha1[:2])
+        m1 = int(fecha1[5:7])
+        y1 = int(fecha1[10:])
+
+        fecha2 = str(fecha2)
+        d2 = int(fecha2[:2])
+        m2 = int(fecha2[5:7])
+        y2 = int(fecha2[10:])
+
+        if y1 < y2:
+            return f'{fecha1} es anterior a {fecha2}'
+        elif m1 < m2 and y1 <= y2:
+            return f'{fecha1} es anterior a {fecha2}'
+        elif d1 < d2 and m1 <= m2 and y1 <= y2:
+            return f'{fecha1} es anterior a {fecha2}'
+        else:
+            return f'{fecha1} no es anterior a {fecha2}'
+
+    @classmethod
+    def firstDayOfTheYear(cls, year):   # Muestra el primer día del año en cuestión
+        return cls(1, 1, year)
+
+    @classmethod
+    def lastDayOfTheYear(cls, year):    # Muestra el último día del año en cuestión
+        return cls(31, 12, year)
+
+    def plusDay(self):  # Incrementa en 1 la fecha
+
+        self.day += 1
+
+        if self.day > Date.totalMonthDays(self):
+            self.day = 1
+            self.month += 1
+
+            if self.month > 12:
+                self.month = 1
+                self.year += 1
+                print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
+
+            else:
+                print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
+
+        else:
+            print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
+
+    def minusDay(self):  # Decrementa en 1 la fecha
+
+        if self.day == 1 and self.month == 1:
+            self.month = 12
+            self.day = Date.totalMonthDays(self)
+            self.year -= 1
+            print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
+
+        elif self.day in range(1, 32):
+            self.day -= 1
+
+            if self.day == 0:
+                self.month -= 1
+                self.day = Date.totalMonthDays(self)
+                print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
+
+            else:
+                print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
+
+    def plusDay2(self):  # Incrementa en 1 la fecha
+
+        if self.day == 31 and self.month == 12:
+            self.month = 1
+            self.day = 1
+            self.year += 1
+            print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
+
+        elif self.day in range(1, 32):
+            self.day += 1
+
+            if self.day > Date.totalMonthDays(self):
+                self.month += 1
+                self.day = 1
+                print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
+
+            else:
+                print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
+
+
+f1 = Date(12, 3, 2000)
+f2 = Date(15, 11, 1975)
+f3 = Date(14, 9, 1980)
+
+print('\n /// Fecha original y fecha +1 /// \n')
+print(f1)
+f1.plusDay2()
+
+print('\n /// Fecha original y fecha -1 /// \n')
+print(f2)
+f2.minusDay()
+
+print('\n /// Primer y Último día del año /// \n')
+print(f3.firstDayOfTheYear(f3.year))
+print(f3.lastDayOfTheYear(f3.year))
+
+##############################################################
