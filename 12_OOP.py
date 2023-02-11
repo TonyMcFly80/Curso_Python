@@ -1260,25 +1260,6 @@ class Date(object):
     def lastDayOfTheYear(cls, year):    # Muestra el último día del año en cuestión
         return cls(31, 12, year)
 
-    def plusDay(self):  # Incrementa en 1 la fecha
-
-        self.day += 1
-
-        if self.day > Date.totalMonthDays(self):
-            self.day = 1
-            self.month += 1
-
-            if self.month > 12:
-                self.month = 1
-                self.year += 1
-                print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
-
-            else:
-                print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
-
-        else:
-            print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
-
     def minusDay(self):  # Decrementa en 1 la fecha
 
         if self.day == 1 and self.month == 1:
@@ -1298,7 +1279,7 @@ class Date(object):
             else:
                 print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
 
-    def plusDay2(self):  # Incrementa en 1 la fecha
+    def plusDay(self):  # Incrementa en 1 la fecha
 
         if self.day == 31 and self.month == 12:
             self.month = 1
@@ -1324,7 +1305,7 @@ f3 = Date(14, 9, 1980)
 
 print('\n /// Fecha original y fecha +1 /// \n')
 print(f1)
-f1.plusDay2()
+f1.plusDay()
 
 print('\n /// Fecha original y fecha -1 /// \n')
 print(f2)
