@@ -785,7 +785,7 @@ class Date(object):
 
 
 fecha = Date(1, 9, 980)
-fecha.isLead()
+print(f'El año de la fecha {fecha} es bisiesto? : {fecha.isLead()}')
 
 ##############################################################
 
