@@ -658,7 +658,7 @@ print(p.volume)
 
 class Date(object):
     """
-    Muestra dia, mes y año.
+    Muestra dia, mes, año y realiza distintas operaciones con la fecha.
     """
     def __init__(self, day=1, month=1, year=1):
         if type(day) is int and type(month) is int and type(year) is int:
