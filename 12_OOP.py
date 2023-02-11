@@ -771,17 +771,17 @@ class Date(object):
     def __str__(self):
         return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
 
-    def isLead(self):
+        def isLead(self):   # Nos dice si el año es bisiesto
         if self.year % 4 == 0:
             if self.year % 100 == 0:
                 if self.year % 400 == 0:
-                    print(f'El año {self.year} SI es bisiesto')
+                    return True
                 else:
-                    print(f'El año {self.year} NO es bisiesto')
+                    return False
             else:
-                print(f'El año {self.year} SI es bisiesto')
+                return True
         else:
-            print(f'El año {self.year} NO es bisiesto')
+            return False
 
 
 fecha = Date(1, 9, 980)
@@ -798,340 +798,9 @@ print(f'El año de la fecha {fecha} es bisiesto? : {fecha.isLead()}')
 
 class Date(object):
     """
-    Muestra dia, mes y año.
+    Muestra dia, mes, año y realiza distintas operaciones con la fecha.
     """
-    def __init__(self, day=1, month=1, year=1):
-        self.day = day
-        self.month = month
-        self.year = year
-        if not self.validDate():
-            print('¡¡¡La fecha introducida no es una fecha válida!!!')
-
-    def validDate(self):
-        d = self.day
-        m = self.month
-        y = self.year
-        if d in range(1, 32) and m in range(1, 13) and y in range(1, 2024):
-            return True
-        return False
-
-    @staticmethod
-    def add_zero_d(day):
-        if day < 10:
-            return f'0{day}'
-        else:
-            return f'{day}'
-
-    @staticmethod
-    def add_zero_m(month):
-        if month < 10:
-            return f'0{month}'
-        else:
-            return f'{month}'
-
-    @staticmethod
-    def add_zero_y(year):
-        if year in range(1, 10):
-            return f'000{year}'
-        elif year in range(10, 100):
-            return f'00{year}'
-        elif year in range(100, 1000):
-            return f'0{year}'
-        else:
-            return f'{year}'
-
-    def __str__(self):
-        return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
-
-    def isLead(self):
-        if self.year % 4 == 0:
-            if self.year % 100 == 0:
-                if self.year % 400 == 0:
-                    print(f'El año {self.year} SI es bisiesto')
-                    return True
-                else:
-                    print(f'El año {self.year} NO es bisiesto')
-                    return False
-            else:
-                print(f'El año {self.year} SI es bisiesto')
-                return True
-        else:
-            print(f'El año {self.year} NO es bisiesto')
-            return False
-
-    def totalMonthDays(self):
-        m = self.month
-        y = Date(self.day, self.month, self.year).isLead()
-        if m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12:
-            print('El mes tiene 31 días')
-        elif m == 4 or m == 6 or m == 9 or m == 11:
-            print('El mes tiene 30 días')
-        elif m == 2 and y is True:
-            print('El mes tiene 29 días')
-        elif m == 2 and y is False:
-            print('El mes tiene 28 días')
-
-
-fecha = Date(17, 2, 980)
-print(fecha)
-print(f'El mes tiene un total de {fecha.totalMonthDays()} días')
-
-##############################################################
-
-# Ejercicio 05
-# Implementa la propiedad .monthName que devuelva el nombre del mes en inglés. Por ejemplo,
-# si nuestra fecha es day = 8, month = 7 y year = 1998, la propiedad debe devolver July.
-class Date(object):
-    """
-    Muestra dia, mes y año.
-    """
-    def __init__(self, day=1, month=1, year=1):
-        self.day = day
-        self.month = month
-        self.year = year
-        if not self.validDate():
-            print('¡¡¡La fecha introducida no es una fecha válida!!!')
-
-    def validDate(self):
-        d = self.day
-        m = self.month
-        y = self.year
-        if d in range(1, 32) and m in range(1, 13) and y in range(1, 2024):
-            return True
-        return False
-
-    @staticmethod
-    def add_zero_d(day):
-        if day < 10:
-            return f'0{day}'
-        else:
-            return f'{day}'
-
-    @staticmethod
-    def add_zero_m(month):
-        if month < 10:
-            return f'0{month}'
-        else:
-            return f'{month}'
-
-    @staticmethod
-    def add_zero_y(year):
-        if year in range(1, 10):
-            return f'000{year}'
-        elif year in range(10, 100):
-            return f'00{year}'
-        elif year in range(100, 1000):
-            return f'0{year}'
-        else:
-            return f'{year}'
-
-    def __str__(self):
-        return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
-
-    def isLead(self):
-        if self.year % 4 == 0:
-            if self.year % 100 == 0:
-                if self.year % 400 == 0:
-                    print(f'El año {self.year} SI es bisiesto')
-                    return True
-                else:
-                    print(f'El año {self.year} NO es bisiesto')
-                    return False
-            else:
-                print(f'El año {self.year} SI es bisiesto')
-                return True
-        else:
-            print(f'El año {self.year} NO es bisiesto')
-            return False
-
-    def totalMonthDays(self):
-        m = self.month
-        y = Date(self.day, self.month, self.year).isLead()
-        if m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12:
-            print('El mes tiene 31 días')
-        elif m == 4 or m == 6 or m == 9 or m == 11:
-            print('El mes tiene 30 días')
-        elif m == 2 and y is True:
-            print('El mes tiene 29 días')
-        elif m == 2 and y is False:
-            print('El mes tiene 28 días')
-
-    @property
-    def monthName(self):
-        meses = ['January', 'Februari', 'March', 'April', 'May', 'June', 'July',
-                 'August', 'September', 'Octuber', 'November', 'December']
-        print(meses[self.month - 1])
-
-
-fecha = Date(17, 10, 980)
-print(fecha)
-fecha.monthName
-
-##############################################################
-
-# Ejercicio 06
-# Implementa el método estático .areEqual(), que dadas dos fechas diga si son iguales.
-# Implementa el método estático .isLater(), que dadas dos fechas diga si la primera es posterior a la
-# segunda.
-# Implementa el método estático .isPrevious(), que dadas dos fechas diga si la primera es anterior a
-# la segunda.
-
-class Date(object):
-    """
-    Muestra dia, mes y año.
-    """
-    def __init__(self, day=1, month=1, year=1):
-        self.day = day
-        self.month = month
-        self.year = year
-        if not self.validDate():
-            print('¡¡¡La fecha introducida no es una fecha válida!!!')
-
-    def validDate(self):
-        d = self.day
-        m = self.month
-        y = self.year
-        if d in range(1, 32) and m in range(1, 13) and y in range(1, 2024):
-            return True
-        return False
-
-    @staticmethod
-    def add_zero_d(day):
-        if day < 10:
-            return f'0{day}'
-        else:
-            return f'{day}'
-
-    @staticmethod
-    def add_zero_m(month):
-        if month < 10:
-            return f'0{month}'
-        else:
-            return f'{month}'
-
-    @staticmethod
-    def add_zero_y(year):
-        if year in range(1, 10):
-            return f'000{year}'
-        elif year in range(10, 100):
-            return f'00{year}'
-        elif year in range(100, 1000):
-            return f'0{year}'
-        else:
-            return f'{year}'
-
-    def __str__(self):
-        return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
-
-    def isLead(self):
-        if self.year % 4 == 0:
-            if self.year % 100 == 0:
-                if self.year % 400 == 0:
-                    print(f'El año {self.year} SI es bisiesto')
-                    return True
-                else:
-                    print(f'El año {self.year} NO es bisiesto')
-                    return False
-            else:
-                print(f'El año {self.year} SI es bisiesto')
-                return True
-        else:
-            print(f'El año {self.year} NO es bisiesto')
-            return False
-
-    def totalMonthDays(self):
-        m = self.month
-        y = Date(self.day, self.month, self.year).isLead()
-        if m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12:
-            print('El mes tiene 31 días')
-        elif m == 4 or m == 6 or m == 9 or m == 11:
-            print('El mes tiene 30 días')
-        elif m == 2 and y is True:
-            print('El mes tiene 29 días')
-        elif m == 2 and y is False:
-            print('El mes tiene 28 días')
-
-    @property
-    def monthName(self):
-        meses = ['January', 'Februari', 'March', 'April', 'May', 'June', 'July',
-                 'August', 'September', 'Octuber', 'November', 'December']
-        print(meses[self.month - 1])
-
-    @staticmethod
-    def areEqual(fecha1, fecha2):
-        if str(fecha1) == str(fecha2):
-            return f'{fecha1} y {fecha2} son iguales'
-        return f'{fecha1} y {fecha2} son distintas'
-
-    @staticmethod
-    def isLater(fecha1, fecha2):
-        fecha1 = str(fecha1)
-        d1 = int(fecha1[:2])
-        m1 = int(fecha1[5:7])
-        y1 = int(fecha1[10:])
-
-        fecha2 = str(fecha2)
-        d2 = int(fecha2[:2])
-        m2 = int(fecha2[5:7])
-        y2 = int(fecha2[10:])
-
-        if y1 > y2:
-            return f'{fecha1} es posterior a {fecha2}'
-        elif m1 > m2 and y1 >= y2:
-            return f'{fecha1} es posterior a {fecha2}'
-        elif d1 > d2 and m1 >= m2 and y1 >= y2:
-            return f'{fecha1} es posterior a {fecha2}'
-        else:
-            return f'{fecha1} no es posterior a {fecha2}'
-
-    @staticmethod
-    def isPrevious(fecha1, fecha2):
-        fecha1 = str(fecha1)
-        d1 = int(fecha1[:2])
-        m1 = int(fecha1[5:7])
-        y1 = int(fecha1[10:])
-
-        fecha2 = str(fecha2)
-        d2 = int(fecha2[:2])
-        m2 = int(fecha2[5:7])
-        y2 = int(fecha2[10:])
-
-        if y1 < y2:
-            return f'{fecha1} es anterior a {fecha2}'
-        elif m1 < m2 and y1 <= y2:
-            return f'{fecha1} es anterior a {fecha2}'
-        elif d1 < d2 and m1 <= m2 and y1 <= y2:
-            return f'{fecha1} es anterior a {fecha2}'
-        else:
-            return f'{fecha1} no es anterior a {fecha2}'
-
-
-f1 = Date(14, 9, 1985)
-f2 = Date(12, 7, 970)
-
-print(f'Son iguales {f1} y {f2} ? : {Date.areEqual(f1, f2)}')
-print(f'Es {f1} posterior a {f2} ?: {Date.isLater(f1, f2)}')
-print(f'Es {f1} anterior a {f2} ?: {Date.isPrevious(f1, f2)}')
-
-##############################################################
-
-# Ejercicio 07
-# Implementa el método de clase .firstDayOfTheYear() que dado un año cree un objeto Date con la
-# fecha correspondiente al primer día del año indicado.
-# Implementa el método de clase .lastDayOfTheYear() que dado un año cree un objeto Date con la
-# fecha correspondiente al último día del año indicado.
-# Implementa el método de instancia .plusDay() que incremente un día la fecha. Ten en cuenta que si
-# estamos en el último día del mes y añadimos un día, tendremos que cambiar de mes (pasar al siguiente).
-# Y lo mismo si estamos en el último día del año (tendremos que pasar al siguiente año).
-# Implementa el método de instancia .minusDay() que decremente un día la fecha. Ten en cuenta que si
-# estamos en el primer día del mes y restamos un día, tendremos que cambiar de mes (pasar al anterior).
-# Y lo mismo si estamos en el primer día del año (tendremos que pasar al año anterior).
-
-class Date(object):
-    """
-    Muestra dia, mes y año.
-    """
-    def __init__(self, day=1, month=1, year=1):
+    def __init__(self, day=1, month=1, year=1):  # Constructor
         self.day = day
         self.month = month
         self.year = year
@@ -1174,7 +843,179 @@ class Date(object):
     def __str__(self):  # Formato en el que se imprime
         return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
 
-    def isLead(self):   # No dice si el año es bisiesto
+    def isLead(self):   # Nos dice si el año es bisiesto
+        if self.year % 4 == 0:
+            if self.year % 100 == 0:
+                if self.year % 400 == 0:
+                    return True
+                else:
+                    return False
+            else:
+                return True
+        else:
+            return False
+
+    def totalMonthDays(self):   # Nos dice cuantos días tiene el mes
+        m = self.month
+        y = Date(self.day, self.month, self.year).isLead()
+        if m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12:
+            return 31
+        elif m == 4 or m == 6 or m == 9 or m == 11:
+            return 30
+        elif m == 2 and y is True:
+            return 29
+        elif m == 2 and y is False:
+            return 28
+
+
+fecha = Date(17, 2, 980)
+print(fecha)
+print(f'El mes tiene un total de {fecha.totalMonthDays()} días')
+
+##############################################################
+
+# Ejercicio 05
+# Implementa la propiedad .monthName que devuelva el nombre del mes en inglés. Por ejemplo,
+# si nuestra fecha es day = 8, month = 7 y year = 1998, la propiedad debe devolver July.
+class Date(object):
+    """
+    Muestra dia, mes, año y realiza distintas operaciones con la fecha.
+    """
+    def __init__(self, day=1, month=1, year=1):  # Constructor
+        self.day = day
+        self.month = month
+        self.year = year
+        if not self.validDate():
+            print('¡¡¡La fecha introducida no es una fecha válida!!!')
+
+    def validDate(self):    # Validamos que la fecha sea correcta
+        d = self.day
+        m = self.month
+        y = self.year
+        if d in range(1, 32) and m in range(1, 13) and y in range(1, 2024):
+            return True
+        return False
+
+    @staticmethod
+    def add_zero_d(day):    # Añadimos ceros al día
+        if day < 10:
+            return f'0{day}'
+        else:
+            return f'{day}'
+
+    @staticmethod
+    def add_zero_m(month):  # Añadimos ceros al mes
+        if month < 10:
+            return f'0{month}'
+        else:
+            return f'{month}'
+
+    @staticmethod
+    def add_zero_y(year):   # Añadimos ceros al año
+        if year in range(1, 10):
+            return f'000{year}'
+        elif year in range(10, 100):
+            return f'00{year}'
+        elif year in range(100, 1000):
+            return f'0{year}'
+        else:
+            return f'{year}'
+
+    def __str__(self):  # Formato en el que se imprime
+        return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
+
+    def isLead(self):   # Nos dice si el año es bisiesto
+        if self.year % 4 == 0:
+            if self.year % 100 == 0:
+                if self.year % 400 == 0:
+                    return True
+                else:
+                    return False
+            else:
+                return True
+        else:
+            return False
+
+    def totalMonthDays(self):   # Nos dice cuantos días tiene el mes
+        m = self.month
+        y = Date(self.day, self.month, self.year).isLead()
+        if m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12:
+            return 31
+        elif m == 4 or m == 6 or m == 9 or m == 11:
+            return 30
+        elif m == 2 and y is True:
+            return 29
+        elif m == 2 and y is False:
+            return 28
+
+    @property
+    def monthName(self):    # Nos da el nombre del mes en inglés
+        meses = ['January', 'Februari', 'March', 'April', 'May', 'June', 'July',
+                 'August', 'September', 'Octuber', 'November', 'December']
+        print(meses[self.month - 1])
+
+
+fecha = Date(17, 10, 980)
+print(fecha)
+fecha.monthName
+
+##############################################################
+
+# Ejercicio 06
+# Implementa el método estático .areEqual(), que dadas dos fechas diga si son iguales.
+# Implementa el método estático .isLater(), que dadas dos fechas diga si la primera es posterior a la
+# segunda.
+# Implementa el método estático .isPrevious(), que dadas dos fechas diga si la primera es anterior a
+# la segunda.
+
+class Date(object):
+    """
+    Muestra dia, mes, año y realiza distintas operaciones con la fecha.
+    """
+    def __init__(self, day=1, month=1, year=1):  # Constructor
+        self.day = day
+        self.month = month
+        self.year = year
+        if not self.validDate():
+            print('¡¡¡La fecha introducida no es una fecha válida!!!')
+
+    def validDate(self):    # Validamos que la fecha sea correcta
+        d = self.day
+        m = self.month
+        y = self.year
+        if d in range(1, 32) and m in range(1, 13) and y in range(1, 2024):
+            return True
+        return False
+
+    @staticmethod
+    def add_zero_d(day):    # Añadimos ceros al día
+        if day < 10:
+            return f'0{day}'
+        else:
+            return f'{day}'
+
+    @staticmethod
+    def add_zero_m(month):  # Añadimos ceros al mes
+        if month < 10:
+            return f'0{month}'
+        else:
+            return f'{month}'
+
+    @staticmethod
+    def add_zero_y(year):   # Añadimos ceros al año
+        if year in range(1, 10):
+            return f'000{year}'
+        elif year in range(10, 100):
+            return f'00{year}'
+        elif year in range(100, 1000):
+            return f'0{year}'
+        else:
+            return f'{year}'
+
+    def __str__(self):  # Formato en el que se imprime
+        return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
+
+    def isLead(self):   # Nos dice si el año es bisiesto
         if self.year % 4 == 0:
             if self.year % 100 == 0:
                 if self.year % 400 == 0:
@@ -1207,8 +1048,8 @@ class Date(object):
     @staticmethod
     def areEqual(fecha1, fecha2):   # Compara dos fechas y dice sin son iguales
         if str(fecha1) == str(fecha2):
-            return f'{fecha1} y {fecha2} son iguales'
-        return f'{fecha1} y {fecha2} son distintas'
+            return True
+        return False
 
     @staticmethod
     def isLater(fecha1, fecha2):    # Compara dos fechas y da el año posterior
@@ -1223,13 +1064,13 @@ class Date(object):
         y2 = int(fecha2[10:])
 
         if y1 > y2:
-            return f'{fecha1} es posterior a {fecha2}'
+            return True
         elif m1 > m2 and y1 >= y2:
-            return f'{fecha1} es posterior a {fecha2}'
+            return True
         elif d1 > d2 and m1 >= m2 and y1 >= y2:
-            return f'{fecha1} es posterior a {fecha2}'
+            return True
         else:
-            return f'{fecha1} no es posterior a {fecha2}'
+            return False
 
     @staticmethod
     def isPrevious(fecha1, fecha2):  # Compara dos fechas y da el año anterior
@@ -1244,13 +1085,160 @@ class Date(object):
         y2 = int(fecha2[10:])
 
         if y1 < y2:
-            return f'{fecha1} es anterior a {fecha2}'
+            return True
         elif m1 < m2 and y1 <= y2:
-            return f'{fecha1} es anterior a {fecha2}'
+            return True
         elif d1 < d2 and m1 <= m2 and y1 <= y2:
-            return f'{fecha1} es anterior a {fecha2}'
+            return True
         else:
-            return f'{fecha1} no es anterior a {fecha2}'
+            return False
+
+
+f1 = Date(14, 9, 1985)
+f2 = Date(12, 7, 970)
+
+print(f'Son iguales {f1} y {f2} ? : {Date.areEqual(f1, f2)}')
+print(f'Es {f1} posterior a {f2} ?: {Date.isLater(f1, f2)}')
+print(f'Es {f1} anterior a {f2} ?: {Date.isPrevious(f1, f2)}')
+
+##############################################################
+
+# Ejercicio 07
+# Implementa el método de clase .firstDayOfTheYear() que dado un año cree un objeto Date con la
+# fecha correspondiente al primer día del año indicado.
+# Implementa el método de clase .lastDayOfTheYear() que dado un año cree un objeto Date con la
+# fecha correspondiente al último día del año indicado.
+# Implementa el método de instancia .plusDay() que incremente un día la fecha. Ten en cuenta que si
+# estamos en el último día del mes y añadimos un día, tendremos que cambiar de mes (pasar al siguiente).
+# Y lo mismo si estamos en el último día del año (tendremos que pasar al siguiente año).
+# Implementa el método de instancia .minusDay() que decremente un día la fecha. Ten en cuenta que si
+# estamos en el primer día del mes y restamos un día, tendremos que cambiar de mes (pasar al anterior).
+# Y lo mismo si estamos en el primer día del año (tendremos que pasar al año anterior).
+
+class Date(object):
+    """
+    Muestra dia, mes, año y realiza distintas operaciones con la fecha.
+    """
+    def __init__(self, day=1, month=1, year=1):  # Constructor
+        self.day = day
+        self.month = month
+        self.year = year
+        if not self.validDate():
+            print('¡¡¡La fecha introducida no es una fecha válida!!!')
+
+    def validDate(self):    # Validamos que la fecha sea correcta
+        d = self.day
+        m = self.month
+        y = self.year
+        if d in range(1, 32) and m in range(1, 13) and y in range(1, 2024):
+            return True
+        return False
+
+    @staticmethod
+    def add_zero_d(day):    # Añadimos ceros al día
+        if day < 10:
+            return f'0{day}'
+        else:
+            return f'{day}'
+
+    @staticmethod
+    def add_zero_m(month):  # Añadimos ceros al mes
+        if month < 10:
+            return f'0{month}'
+        else:
+            return f'{month}'
+
+    @staticmethod
+    def add_zero_y(year):   # Añadimos ceros al año
+        if year in range(1, 10):
+            return f'000{year}'
+        elif year in range(10, 100):
+            return f'00{year}'
+        elif year in range(100, 1000):
+            return f'0{year}'
+        else:
+            return f'{year}'
+
+    def __str__(self):  # Formato en el que se imprime
+        return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
+
+    def isLead(self):   # Nos dice si el año es bisiesto
+        if self.year % 4 == 0:
+            if self.year % 100 == 0:
+                if self.year % 400 == 0:
+                    return True
+                else:
+                    return False
+            else:
+                return True
+        else:
+            return False
+
+    def totalMonthDays(self):   # Nos dice cuantos días tiene el mes
+        m = self.month
+        y = Date(self.day, self.month, self.year).isLead()
+        if m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12:
+            return 31
+        elif m == 4 or m == 6 or m == 9 or m == 11:
+            return 30
+        elif m == 2 and y is True:
+            return 29
+        elif m == 2 and y is False:
+            return 28
+
+    @property
+    def monthName(self):    # Nos da el nombre del mes en inglés
+        meses = ['January', 'Februari', 'March', 'April', 'May', 'June', 'July',
+                 'August', 'September', 'Octuber', 'November', 'December']
+        print(meses[self.month - 1])
+
+    @staticmethod
+    def areEqual(fecha1, fecha2):   # Compara dos fechas y dice sin son iguales
+        if str(fecha1) == str(fecha2):
+            return True
+        return False
+
+    @staticmethod
+    def isLater(fecha1, fecha2):    # Compara dos fechas y da el año posterior
+        fecha1 = str(fecha1)
+        d1 = int(fecha1[:2])
+        m1 = int(fecha1[5:7])
+        y1 = int(fecha1[10:])
+
+        fecha2 = str(fecha2)
+        d2 = int(fecha2[:2])
+        m2 = int(fecha2[5:7])
+        y2 = int(fecha2[10:])
+
+        if y1 > y2:
+            return True
+        elif m1 > m2 and y1 >= y2:
+            return True
+        elif d1 > d2 and m1 >= m2 and y1 >= y2:
+            return True
+        else:
+            return False
+
+    @staticmethod
+    def isPrevious(fecha1, fecha2):  # Compara dos fechas y da el año anterior
+        fecha1 = str(fecha1)
+        d1 = int(fecha1[:2])
+        m1 = int(fecha1[5:7])
+        y1 = int(fecha1[10:])
+
+        fecha2 = str(fecha2)
+        d2 = int(fecha2[:2])
+        m2 = int(fecha2[5:7])
+        y2 = int(fecha2[10:])
+
+        if y1 < y2:
+            return True
+        elif m1 < m2 and y1 <= y2:
+            return True
+        elif d1 < d2 and m1 <= m2 and y1 <= y2:
+            return True
+        else:
+            return False
 
     @classmethod
     def firstDayOfTheYear(cls, year):   # Muestra el primer día del año en cuestión
@@ -1297,8 +1285,8 @@ class Date(object):
 
             else:
                 print(f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}')
-
-
+                
+                
 f1 = Date(12, 3, 2000)
 f2 = Date(15, 11, 1975)
 f3 = Date(14, 9, 1980)
@@ -1370,7 +1358,7 @@ class Date(object):
     def __str__(self):  # Formato en el que se imprime
         return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
 
-    def isLead(self):   # No dice si el año es bisiesto
+    def isLead(self):   # Nos dice si el año es bisiesto
         if self.year % 4 == 0:
             if self.year % 100 == 0:
                 if self.year % 400 == 0:
@@ -1440,13 +1428,13 @@ class Date(object):
         y2 = int(fecha2[10:])
 
         if y1 < y2:
-            return f'{fecha1} es anterior a {fecha2}'
+            return True
         elif m1 < m2 and y1 <= y2:
-            return f'{fecha1} es anterior a {fecha2}'
+            return True
         elif d1 < d2 and m1 <= m2 and y1 <= y2:
-            return f'{fecha1} es anterior a {fecha2}'
+            return True
         else:
-            return f'{fecha1} no es anterior a {fecha2}'
+            return False
 
     @classmethod
     def firstDayOfTheYear(cls, year):   # Muestra el primer día del año en cuestión
@@ -1576,7 +1564,7 @@ class Date(object):
     def __str__(self):  # Formato en el que se imprime
         return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
 
-    def isLead(self):   # No dice si el año es bisiesto
+    def isLead(self):   # Nos dice si el año es bisiesto
         if self.year % 4 == 0:
             if self.year % 100 == 0:
                 if self.year % 400 == 0:
@@ -1646,13 +1634,13 @@ class Date(object):
         y2 = int(fecha2[10:])
 
         if y1 < y2:
-            return f'{fecha1} es anterior a {fecha2}'
+            return True
         elif m1 < m2 and y1 <= y2:
-            return f'{fecha1} es anterior a {fecha2}'
+            return True
         elif d1 < d2 and m1 <= m2 and y1 <= y2:
-            return f'{fecha1} es anterior a {fecha2}'
+            return True
         else:
-            return f'{fecha1} no es anterior a {fecha2}'
+            return False
 
     @classmethod
     def firstDayOfTheYear(cls, year):   # Muestra el primer día del año en cuestión
@@ -1804,7 +1792,7 @@ class Date(object):
     def __str__(self):  # Formato en el que se imprime
         return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
 
-    def isLead(self):   # No dice si el año es bisiesto
+    def isLead(self):   # Nos dice si el año es bisiesto
         if self.year % 4 == 0:
             if self.year % 100 == 0:
                 if self.year % 400 == 0:
@@ -1874,13 +1862,13 @@ class Date(object):
         y2 = int(fecha2[10:])
 
         if y1 < y2:
-            return f'{fecha1} es anterior a {fecha2}'
+            return True
         elif m1 < m2 and y1 <= y2:
-            return f'{fecha1} es anterior a {fecha2}'
+            return True
         elif d1 < d2 and m1 <= m2 and y1 <= y2:
-            return f'{fecha1} es anterior a {fecha2}'
+            return True
         else:
-            return f'{fecha1} no es anterior a {fecha2}'
+            return False
 
     @classmethod
     def firstDayOfTheYear(cls, year):   # Muestra el primer día del año en cuestión
