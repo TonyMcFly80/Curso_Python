@@ -968,3 +968,149 @@ print(fecha)
 fecha.monthName
 
 ##############################################################
+
+# Ejercicio 06
+# Implementa el método estático .areEqual(), que dadas dos fechas diga si son iguales.
+# Implementa el método estático .isLater(), que dadas dos fechas diga si la primera es posterior a la
+# segunda.
+# Implementa el método estático .isPrevious(), que dadas dos fechas diga si la primera es anterior a
+# la segunda.
+
+class Date(object):
+    """
+    Muestra dia, mes y año.
+    """
+    def __init__(self, day=1, month=1, year=1):
+        self.day = day
+        self.month = month
+        self.year = year
+        if not self.validDate():
+            print('¡¡¡La fecha introducida no es una fecha válida!!!')
+
+    def validDate(self):
+        d = self.day
+        m = self.month
+        y = self.year
+        if d in range(1, 32) and m in range(1, 13) and y in range(1, 2024):
+            return True
+        return False
+
+    @staticmethod
+    def add_zero_d(day):
+        if day < 10:
+            return f'0{day}'
+        else:
+            return f'{day}'
+
+    @staticmethod
+    def add_zero_m(month):
+        if month < 10:
+            return f'0{month}'
+        else:
+            return f'{month}'
+
+    @staticmethod
+    def add_zero_y(year):
+        if year in range(1, 10):
+            return f'000{year}'
+        elif year in range(10, 100):
+            return f'00{year}'
+        elif year in range(100, 1000):
+            return f'0{year}'
+        else:
+            return f'{year}'
+
+    def __str__(self):
+        return f'{Date.add_zero_d(self.day)} / {Date.add_zero_m(self.month)} / {Date.add_zero_y(self.year)}'
+
+    def isLead(self):
+        if self.year % 4 == 0:
+            if self.year % 100 == 0:
+                if self.year % 400 == 0:
+                    print(f'El año {self.year} SI es bisiesto')
+                    return True
+                else:
+                    print(f'El año {self.year} NO es bisiesto')
+                    return False
+            else:
+                print(f'El año {self.year} SI es bisiesto')
+                return True
+        else:
+            print(f'El año {self.year} NO es bisiesto')
+            return False
+
+    def totalMonthDays(self):
+        m = self.month
+        y = Date(self.day, self.month, self.year).isLead()
+        if m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12:
+            print('El mes tiene 31 días')
+        elif m == 4 or m == 6 or m == 9 or m == 11:
+            print('El mes tiene 30 días')
+        elif m == 2 and y is True:
+            print('El mes tiene 29 días')
+        elif m == 2 and y is False:
+            print('El mes tiene 28 días')
+
+    @property
+    def monthName(self):
+        meses = ['January', 'Februari', 'March', 'April', 'May', 'June', 'July',
+                 'August', 'September', 'Octuber', 'November', 'December']
+        print(meses[self.month - 1])
+
+    @staticmethod
+    def areEqual(fecha1, fecha2):
+        if str(fecha1) == str(fecha2):
+            return f'{fecha1} y {fecha2} son iguales'
+        return f'{fecha1} y {fecha2} son distintas'
+
+    @staticmethod
+    def isLater(fecha1, fecha2):
+        fecha1 = str(fecha1)
+        d1 = int(fecha1[:2])
+        m1 = int(fecha1[5:7])
+        y1 = int(fecha1[10:])
+
+        fecha2 = str(fecha2)
+        d2 = int(fecha2[:2])
+        m2 = int(fecha2[5:7])
+        y2 = int(fecha2[10:])
+
+        if y1 > y2:
+            return f'{fecha1} es posterior a {fecha2}'
+        elif m1 > m2 and y1 >= y2:
+            return f'{fecha1} es posterior a {fecha2}'
+        elif d1 > d2 and m1 >= m2 and y1 >= y2:
+            return f'{fecha1} es posterior a {fecha2}'
+        else:
+            return f'{fecha1} no es posterior a {fecha2}'
+
+    @staticmethod
+    def isPrevious(fecha1, fecha2):
+        fecha1 = str(fecha1)
+        d1 = int(fecha1[:2])
+        m1 = int(fecha1[5:7])
+        y1 = int(fecha1[10:])
+
+        fecha2 = str(fecha2)
+        d2 = int(fecha2[:2])
+        m2 = int(fecha2[5:7])
+        y2 = int(fecha2[10:])
+
+        if y1 < y2:
+            return f'{fecha1} es anterior a {fecha2}'
+        elif m1 < m2 and y1 <= y2:
+            return f'{fecha1} es anterior a {fecha2}'
+        elif d1 < d2 and m1 <= m2 and y1 <= y2:
+            return f'{fecha1} es anterior a {fecha2}'
+        else:
+            return f'{fecha1} no es anterior a {fecha2}'
+
+
+f1 = Date(14, 9, 1985)
+f2 = Date(12, 7, 970)
+
+print(Date.areEqual(f1, f2))
+print(Date.isLater(f1, f2))
+print(Date.isPrevious(f1, f2))
+
+##############################################################
