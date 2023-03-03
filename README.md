@@ -1,0 +1,3 @@
+# Curso Python
+Código limpio de cada tema, realizado para superar tanto los ejercicios como exámenes... 
+y el proyecto final del mismo basándome en las instrucciones recibidas.
