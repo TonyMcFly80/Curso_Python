@@ -1,0 +1,9 @@
+Pulsa 6 - Introducir posicion de la palabra seleccionada.
+Pulsa 7 - Ayuda con posibles posiciones en tablero de la palabra seleccionada.
+Pulsa 1 - Introducir palabra.
+Pulsa 2 - Consultar tus fichas en mano.
+Pulsa 3 - Consultar tu puntuacion actual.
+Pulsa 4 - Consultar los puntos de cada ficha.
+Pulsa 5 - Ayuda con posibles palabras que puedes formar.
+Pulsa 8 - Consultar la leyenda de colores.
+Pulsa 0 - Salir y terminar el juego.

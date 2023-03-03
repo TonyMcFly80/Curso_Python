@@ -1,0 +1,6 @@
+///Instrucciones///
+
+El juego consiste en sumar puntos formando palabras en vertical u horizontal 
+con las fichas que tengas. Las palabras que formes deben anexarse a palabras que ya esten 
+en el tablero mediante una o mas fichas, excepto la primera palabra, que se coloca simplemente 
+en el centro del tablero. IMPORTANTE: introduce las palabras en MAYUSCULAS.
